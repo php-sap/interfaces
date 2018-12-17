@@ -1,0 +1,35 @@
+{
+  "name": "phpsap/interfaces",
+  "description": "Interfaces for implementing the PHP/SAP API. See https://php-sap.github.io for details.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gregor J.",
+      "email": "gregor-j@users.noreply.github.com"
+    }
+  ],
+  "support": {
+    "docs": "https://php-sap.github.io",
+    "issues": "https://github.com/php-sap/interfaces/issues",
+    "source": "https://github.com/php-sap/interfaces"
+  },
+  "keywords": [
+    "phpsap",
+    "php-sap",
+    "sap",
+    "saprfc",
+    "sap-rfc",
+    "rfc",
+    "remote function call"
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "phpsap\\interfaces\\": "src/"
+    }
+  }
+}
