@@ -77,7 +77,8 @@ interface IConfig
     public function getDest();
 
     /**
-     * Generate the configuration needed for connecting.
+     * Generate the type of configuration needed by the PHP module in order to
+     * establish a connection to SAP.
      * @return mixed
      */
     public function generateConfig();
