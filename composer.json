@@ -17,12 +17,11 @@
   "keywords": [
     "phpsap",
     "php-sap",
-    "sap",
-    "saprfc",
-    "sap-rfc",
-    "rfc",
-    "remote function call"
+    "interfaces"
   ],
+  "replace": {
+    "kba-team/php-sap": "1.*"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.5.0"
