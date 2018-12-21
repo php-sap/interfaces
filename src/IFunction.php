@@ -16,7 +16,7 @@ use kbATeam\TypeCast\ITypeCast;
 /**
  * Interface IFunction
  *
- * PHP/SAP function interface.
+ * Manage a PHP/SAP remote function call.
  *
  * @package phpsap\interfaces
  * @author  Gregor J.

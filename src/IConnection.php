@@ -14,7 +14,7 @@ namespace phpsap\interfaces;
 /**
  * Interface IConnection
  *
- * PHP/SAP connection interface.
+ * Manage a PHP/SAP connection instance.
  *
  * @package phpsap\interfaces
  * @author  Gregor J.

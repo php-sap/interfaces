@@ -14,7 +14,8 @@ namespace phpsap\interfaces;
 /**
  * Interface IConfig
  *
- * Interface to configure basic connection parameters for SAP remote function calls.
+ * Interface to configure basic connection parameters for SAP remote function calls,
+ * that are common to both connection types (A, and B)
  *
  * @package phpsap\interfaces
  * @author  Gregor J.
