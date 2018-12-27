@@ -11,8 +11,6 @@
 
 namespace phpsap\interfaces;
 
-use kbATeam\TypeCast\ITypeCast;
-
 /**
  * Interface IFunction
  *
@@ -48,6 +46,8 @@ interface IFunction
      * Invoke the prepared function call.
      * @param null|array $params Optional parameter array.
      * @return array
+     * @throws \phpsap\interfaces\IConnectionFailedException
+     * @throws \phpsap\interfaces\IFunctionCallException
      */
     public function invoke($params = null);
 }

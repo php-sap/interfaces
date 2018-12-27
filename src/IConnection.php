@@ -40,7 +40,7 @@ interface IConnection
      * Send a ping request via an established connection to verify that the
      * connection works.
      * @return boolean success?
-     * @throws \phpsap\exceptions\ConnectionFailedException
+     * @throws \phpsap\interfaces\IConnectionFailedException
      */
     public function ping();
 
@@ -48,6 +48,8 @@ interface IConnection
      * Prepare a remote function call and return a function instance.
      * @param string $functionName
      * @return \phpsap\interfaces\IFunction
+     * @throws \phpsap\interfaces\IConnectionFailedException
+     * @throws \phpsap\interfaces\IUnknownFunctionException
      */
     public function prepareFunction($functionName);
 
