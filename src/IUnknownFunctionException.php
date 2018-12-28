@@ -2,7 +2,7 @@
 /**
  * File src/IUnknownFunctionException.php
  *
- * The requested function could not be found.
+ * The requested remote function could not be found.
  *
  * @package interfaces
  * @author  Gregor J.
@@ -14,7 +14,7 @@ namespace phpsap\interfaces;
 /**
  * Class phpsap\interfaces\IUnknownFunctionException
  *
- * The requested function could not be found.
+ * The requested remote function could not be found.
  *
  * @package phpsap\interfaces
  * @author  Gregor J.
