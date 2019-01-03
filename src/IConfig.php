@@ -81,6 +81,7 @@ interface IConfig
      * Generate the type of configuration needed by the PHP module in order to
      * establish a connection to SAP.
      * @return mixed
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function generateConfig();
 }
