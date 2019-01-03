@@ -1,6 +1,6 @@
 <?php
 /**
- * File src/IFunctionCallException.php
+ * File src/exceptions/IFunctionCallException.php
  *
  * The SAP remote function call failed.
  *
@@ -9,14 +9,14 @@
  * @license MIT
  */
 
-namespace phpsap\interfaces;
+namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\IFunctionCallException
+ * Class phpsap\interfaces\exceptions\IFunctionCallException
  *
  * The SAP remote function call failed.
  *
- * @package phpsap\interfaces
+ * @package phpsap\interfaces\exceptions
  * @author  Gregor J.
  * @license MIT
  */

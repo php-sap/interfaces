@@ -1,6 +1,6 @@
 <?php
 /**
- * File src/ISapException.php
+ * File src/exceptions/ISapException.php
  *
  * Interface for the generic SAP exception.
  *
@@ -9,14 +9,14 @@
  * @license MIT
  */
 
-namespace phpsap\interfaces;
+namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\ISapException
+ * Class phpsap\interfaces\exceptions\ISapException
  *
  * Interface for the generic SAP exception.
  *
- * @package phpsap\interfaces
+ * @package phpsap\interfaces\exceptions
  * @author  Gregor J.
  * @license MIT
  */

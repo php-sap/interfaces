@@ -1,6 +1,6 @@
 <?php
 /**
- * File src/IUnknownFunctionException.php
+ * File src/exceptions/IUnknownFunctionException.php
  *
  * The requested remote function could not be found.
  *
@@ -9,14 +9,14 @@
  * @license MIT
  */
 
-namespace phpsap\interfaces;
+namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\IUnknownFunctionException
+ * Class phpsap\interfaces\exceptions\IUnknownFunctionException
  *
  * The requested remote function could not be found.
  *
- * @package phpsap\interfaces
+ * @package phpsap\interfaces\exceptions
  * @author  Gregor J.
  * @license MIT
  */

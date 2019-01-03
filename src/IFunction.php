@@ -46,8 +46,8 @@ interface IFunction
      * Invoke the prepared function call.
      * @param null|array $params Optional parameter array.
      * @return array
-     * @throws \phpsap\interfaces\IConnectionFailedException
-     * @throws \phpsap\interfaces\IFunctionCallException
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     * @throws \phpsap\interfaces\exceptions\IFunctionCallException
      */
     public function invoke($params = null);
 }
