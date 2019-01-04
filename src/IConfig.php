@@ -24,6 +24,14 @@ namespace phpsap\interfaces;
 interface IConfig
 {
     /**
+     * Define trace levels 0-3.
+     */
+    const TRACE_OFF=0;
+    const TRACE_BRIEF=1;
+    const TRACE_VERBOSE=2;
+    const TRACE_FULL=3;
+
+    /**
      * If the connection needs to be made through a firewall using a SAPRouter,
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
@@ -32,7 +40,7 @@ interface IConfig
     public function getSaprouter();
 
     /**
-     * Get the trace level (0-3)
+     * Get the trace level (0-3). See constants TRACE_*.
      * @return int the trace level
      */
     public function getTrace();
