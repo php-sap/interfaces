@@ -37,6 +37,19 @@ interface IConnection
     public function getId();
 
     /**
+     * Is connection established?
+     * @return bool
+     */
+    public function isConnected();
+
+    /**
+     * Establish a connection to the configured system.
+     * In case the connection is already open, close it first.
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     */
+    public function connect();
+
+    /**
      * Send a ping request via an established connection to verify that the
      * connection works.
      * @return boolean success?
