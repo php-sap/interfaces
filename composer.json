@@ -1,14 +1,16 @@
 {
-  "name": "phpsap/interfaces",
+  "name": "php-sap/interfaces",
   "description": "Interfaces for implementing the PHP/SAP API. See https://php-sap.github.io for details.",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
       "name": "Gregor J.",
-      "email": "gregor-j@users.noreply.github.com"
+      "email": "gregor-j@users.noreply.github.com",
+      "role": "developer"
     }
   ],
+  "homepage": "https://php-sap.github.io",
   "support": {
     "docs": "https://php-sap.github.io",
     "issues": "https://github.com/php-sap/interfaces/issues",
@@ -19,8 +21,8 @@
     "php-sap",
     "interfaces"
   ],
-  "replace": {
-    "kba-team/php-sap": "1.*"
+  "conflict":  {
+    "kba-team/php-sap": "*"
   },
   "minimum-stability": "stable",
   "require": {
