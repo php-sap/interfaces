@@ -25,6 +25,7 @@ interface IConnection
     /**
      * Inject connection configuration.
      * @param \phpsap\interfaces\IConfig $config connection configuration
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function __construct(IConfig $config);
 
