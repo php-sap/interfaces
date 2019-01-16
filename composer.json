@@ -11,11 +11,6 @@
     }
   ],
   "homepage": "https://php-sap.github.io",
-  "support": {
-    "docs": "https://php-sap.github.io",
-    "issues": "https://github.com/php-sap/interfaces/issues",
-    "source": "https://github.com/php-sap/interfaces"
-  },
   "keywords": [
     "phpsap",
     "php-sap",
