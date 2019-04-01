@@ -14,7 +14,7 @@ namespace phpsap\interfaces\exceptions;
 /**
  * Class phpsap\interfaces\exceptions\IIncompleteConfigException
  *
- * TThe configuration is incomplete.
+ * The configuration is incomplete.
  *
  * @package phpsap\interfaces\exceptions
  * @author  Gregor J.
