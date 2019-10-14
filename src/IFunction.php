@@ -43,11 +43,16 @@ interface IFunction
     public function setParam($name, $value);
 
     /**
+     * Get all set parameters.
+     * @return array Associative array of all parameters that have been set.
+     */
+    public function getParams();
+
+    /**
      * Invoke the prepared function call.
-     * @param null|array $params Optional parameter array.
      * @return array
      * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
      * @throws \phpsap\interfaces\exceptions\IFunctionCallException
      */
-    public function invoke($params = null);
+    public function invoke();
 }
