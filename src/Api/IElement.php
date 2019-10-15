@@ -12,7 +12,7 @@ namespace phpsap\interfaces\Api;
  * @author  Gregor J.
  * @license MIT
  */
-interface IElement
+interface IElement extends \JsonSerializable
 {
     /**
      * API element that casts to PHP string.
@@ -54,7 +54,7 @@ interface IElement
     /**
      * Cast a given value to the implemented value.
      * @param mixed $value
-     * @return mixed
+     * @return bool|int|float|string|array
      */
     public function cast($value);
 }
