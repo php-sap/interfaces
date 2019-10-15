@@ -4,53 +4,41 @@ namespace phpsap\interfaces\Api;
 
 /**
  * Interface IValue
+ *
+ * API values have a direction (input, output or table) and an optional flag, unlike
+ * elements.
+ *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
  * @license MIT
  */
-interface IValue
+interface IValue extends IElement
 {
     /**
-     * API element that casts to PHP string.
+     * API input element.
      */
-    const TYPE_STRING = 'string';
+    const DIRECTION_INPUT = 'input';
 
     /**
-     * API element that casts to PHP int.
+     * API output element.
      */
-    const TYPE_INTEGER = 'int';
+    const DIRECTION_OUTPUT = 'output';
 
     /**
-     * API element that casts to PHP bool.
+     * API table element.
      */
-    const TYPE_BOOLEAN = 'bool';
+    const DIRECTION_TABLE = 'table';
 
     /**
-     * API element that casts to PHP float.
-     */
-    const TYPE_FLOAT = 'float';
-
-    /**
-     * API element that casts to PHP array.
-     */
-    const TYPE_ARRAY = 'array';
-
-    /**
-     * The PHP type of the element.
+     * Get the direction of the parameter.
+     * interface.
      * @return string
      */
-    public function getType();
+    public function getDirection();
 
     /**
-     * The name of the element.
-     * @return string
+     * Is the element optional?
+     * @return bool
      */
-    public function getName();
-
-    /**
-     * Cast a given value to the implemented value.
-     * @param mixed $value
-     * @return mixed
-     */
-    public function cast($value);
+    public function isOptional();
 }
