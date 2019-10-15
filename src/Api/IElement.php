@@ -10,8 +10,45 @@ namespace phpsap\interfaces\Api;
  */
 interface IElement
 {
-    const DIRECTION_IN = 1;
-    const DIRECTION_OUT = 2;
+    /**
+     * API input element.
+     */
+    const DIRECTION_INPUT = 'input';
+
+    /**
+     * API output element.
+     */
+    const DIRECTION_OUTPUT = 'output';
+
+    /**
+     * API table element.
+     */
+    const DIRECTION_TABLE = 'table';
+
+    /**
+     * API element that casts to PHP string.
+     */
+    const TYPE_STRING = 'string';
+
+    /**
+     * API element that casts to PHP int.
+     */
+    const TYPE_INTEGER = 'int';
+
+    /**
+     * API element that casts to PHP bool.
+     */
+    const TYPE_BOOLEAN = 'bool';
+
+    /**
+     * API element that casts to PHP float.
+     */
+    const TYPE_FLOAT = 'float';
+
+    /**
+     * API element that casts to PHP array.
+     */
+    const TYPE_ARRAY = 'array';
 
     /**
      * The name of the element.
@@ -38,9 +75,16 @@ interface IElement
     public function getType();
 
     /**
-     * Get the direction of the parameter. See DIRECTION_* constants of this
+     * Get the direction of the parameter.
      * interface.
-     * @return int
+     * @return string
      */
     public function getDirection();
+
+    /**
+     * Cast a given value to the implemented value.
+     * @param mixed $value
+     * @return mixed
+     */
+    public function cast($value);
 }
