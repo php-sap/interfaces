@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Interface ITableElementMissingException
+ * Interface IArrayElementMissingException
  *
  * A table element required by the API is not in the table.
  *
@@ -11,6 +11,6 @@ namespace phpsap\interfaces\exceptions;
  * @author  Gregor J.
  * @license MIT
  */
-interface ITableElementMissingException extends ISapException
+interface IArrayElementMissingException extends ISapException
 {
 }
