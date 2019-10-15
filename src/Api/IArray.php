@@ -18,4 +18,11 @@ interface IArray extends IValue
      * @return array
      */
     public function getMembers();
+
+    /**
+     * Add a member to the array.
+     * @param \phpsap\interfaces\Api\IElement $member
+     * @return \phpsap\interfaces\Api\IArray
+     */
+    public function addMember(IElement $member);
 }

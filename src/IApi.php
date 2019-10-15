@@ -2,6 +2,9 @@
 
 namespace phpsap\interfaces;
 
+use phpsap\interfaces\Api\IArray;
+use phpsap\interfaces\Api\IValue;
+
 /**
  * Interface IApi
  * @package phpsap\interfaces
@@ -10,6 +13,13 @@ namespace phpsap\interfaces;
  */
 interface IApi extends \JsonSerializable
 {
+    /**
+     * Add an input value of the remote function.
+     * @param \phpsap\interfaces\Api\IValue $value
+     * @return \phpsap\interfaces\IApi
+     */
+    public function addInput(IValue $value);
+
     /**
      * Get all input values of the remote function.
      * @return \phpsap\interfaces\Api\IValue[]
@@ -25,6 +35,13 @@ interface IApi extends \JsonSerializable
     public function castInputValues($array);
 
     /**
+     * Add an input value of the remote function.
+     * @param \phpsap\interfaces\Api\IValue $value
+     * @return \phpsap\interfaces\IApi
+     */
+    public function addOutput(IValue $value);
+
+    /**
      * Get all output values of the remote function.
      * @return \phpsap\interfaces\Api\IValue[]
      */
@@ -37,6 +54,13 @@ interface IApi extends \JsonSerializable
      * @return array
      */
     public function castOutputValues($array);
+
+    /**
+     * Add a table of the remote function.
+     * @param \phpsap\interfaces\Api\IArray $table
+     * @return \phpsap\interfaces\IApi
+     */
+    public function addTable(IArray $table);
 
     /**
      * Get all tables of the remote function.
