@@ -52,4 +52,11 @@ interface IElement extends \JsonSerializable
      * @return bool|int|float|string|array
      */
     public function cast($value);
+
+    /**
+     * Decode a formerly JSON encoded IElement object.
+     * @param string|\stdClass|array $json
+     * @return \phpsap\interfaces\IElement
+     */
+    public static function jsonDecode($json);
 }

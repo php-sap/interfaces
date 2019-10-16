@@ -2,7 +2,6 @@
 
 namespace phpsap\interfaces;
 
-use phpsap\interfaces\Api\IArray;
 use phpsap\interfaces\Api\IValue;
 
 /**
@@ -63,9 +62,9 @@ interface IApi extends \JsonSerializable
     public function castTables($array);
 
     /**
-     * Unserialize a formerly JSON serialized IApi object.
-     * @param string $json
+     * Decode a formerly JSON encoded IApi object.
+     * @param string|\stdClass|array $json
      * @return \phpsap\interfaces\IApi
      */
-    public static function unserializeJson($json);
+    public static function jsonDecode($json);
 }
