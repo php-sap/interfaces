@@ -25,6 +25,16 @@ interface IValue extends IElement
     const DIRECTION_OUTPUT = 'output';
 
     /**
+     * JSON configuration key for direction value.
+     */
+    const JSON_DIRECTION = 'direction';
+
+    /**
+     * JSON configuration key for is optional flag.
+     */
+    const JSON_OPTIONAL = 'optional';
+
+    /**
      * Get the direction of the parameter.
      * interface.
      * @return string

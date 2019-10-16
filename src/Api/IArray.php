@@ -24,6 +24,11 @@ interface IArray extends IValue
     const TYPE_ARRAY = 'array';
 
     /**
+     * JSON configuration key for members array.
+     */
+    const JSON_MEMBERS = 'members';
+
+    /**
      * Return an array of member elements.
      * @return array
      */

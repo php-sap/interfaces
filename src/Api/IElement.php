@@ -35,6 +35,16 @@ interface IElement extends \JsonSerializable
     const TYPE_FLOAT = 'float';
 
     /**
+     * JSON configuration key for type value.
+     */
+    const JSON_TYPE = 'type';
+
+    /**
+     * JSON configuration key for name value.
+     */
+    const JSON_NAME = 'name';
+
+    /**
      * The PHP type of the element.
      * @return string
      */
