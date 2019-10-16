@@ -25,11 +25,6 @@ interface IValue extends IElement
     const DIRECTION_OUTPUT = 'output';
 
     /**
-     * API table element.
-     */
-    const DIRECTION_TABLE = 'table';
-
-    /**
      * Get the direction of the parameter.
      * interface.
      * @return string

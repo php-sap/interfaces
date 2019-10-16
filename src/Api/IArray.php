@@ -14,6 +14,16 @@ namespace phpsap\interfaces\Api;
 interface IArray extends IValue
 {
     /**
+     * API table element.
+     */
+    const DIRECTION_TABLE = 'table';
+
+    /**
+     * API element that casts to PHP array.
+     */
+    const TYPE_ARRAY = 'array';
+
+    /**
      * Return an array of member elements.
      * @return array
      */

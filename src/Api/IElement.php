@@ -35,11 +35,6 @@ interface IElement extends \JsonSerializable
     const TYPE_FLOAT = 'float';
 
     /**
-     * API element that casts to PHP array.
-     */
-    const TYPE_ARRAY = 'array';
-
-    /**
      * The PHP type of the element.
      * @return string
      */
