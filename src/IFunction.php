@@ -29,16 +29,13 @@ interface IFunction
     public function getName();
 
     /**
-     * Get an associative array, that describes the API of the remote function.
-     * The associative array consists of arrays for 'input', 'output',
-     * 'bidirectional' and 'table' parameters.
+     * Retrieve the remote function API.
      * @return \phpsap\interfaces\IApi
      */
     public function getApi();
 
     /**
-     * Load an associative array that describes the API of the remote function.
-     * This can be used to cache the remote API description.
+     * Manually set the remote function API (e.g. from cache).
      * @param \phpsap\interfaces\IApi $api
      * @return \phpsap\interfaces\IFunction
      */
