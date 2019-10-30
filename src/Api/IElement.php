@@ -35,6 +35,16 @@ interface IElement extends \JsonSerializable
     const TYPE_FLOAT = 'float';
 
     /**
+     * API element that casts to a hexadecimal encoded binary.
+     */
+    const TYPE_HEXBIN = 'hex-bin';
+
+    /**
+     * API element that casts to a DateTime object
+     */
+    const TYPE_DATE = 'DateTime';
+
+    /**
      * JSON configuration key for type value.
      */
     const JSON_TYPE = 'type';
