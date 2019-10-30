@@ -41,28 +41,22 @@ interface IElement extends \JsonSerializable
     const TYPE_HEX2BIN = 'hex2bin';
 
     /**
-     * API element that casts a binary to to a hexadecimal encoded binary.
-     * (direction: input)
-     */
-    const TYPE_BIN2HEX = 'bin2hex';
-
-    /**
-     * API element that casts to a DateTime object containing a date.
+     * API date element that casts to a DateTime object.
      */
     const TYPE_DATE = 'date';
 
     /**
-     * API element that casts to a DateTime object containing time.
+     * API time element that casts to a DateTime object.
      */
     const TYPE_TIME = 'time';
 
     /**
-     * API element that casts to a DateTime object containing time.
+     * API virtual timestamp element (e.g. string) that casts to a DateTime object.
      */
     const TYPE_TIMESTAMP = 'timestamp';
 
     /**
-     * API element that casts to a DateTime object containing time.
+     * API virtual calendar week element (e.g. string) that casts to a DateTime object.
      */
     const TYPE_WEEK = 'week';
 
@@ -89,9 +83,9 @@ interface IElement extends \JsonSerializable
     public function getName();
 
     /**
-     * Cast a given value to the implemented value.
+     * Cast a given output value to the implemented value.
      * @param mixed $value
-     * @return bool|int|float|string|array
+     * @return bool|int|float|string|\phpsap\DateTime\SapDateTime
      */
     public function cast($value);
 
