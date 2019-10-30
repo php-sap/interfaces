@@ -40,9 +40,14 @@ interface IElement extends \JsonSerializable
     const TYPE_HEXBIN = 'hex-bin';
 
     /**
-     * API element that casts to a DateTime object
+     * API element that casts to a DateTime object containing a date.
      */
-    const TYPE_DATE = 'DateTime';
+    const TYPE_DATE = 'date';
+
+    /**
+     * API element that casts to a DateTime object containing time.
+     */
+    const TYPE_TIME = 'time';
 
     /**
      * JSON configuration key for type value.
