@@ -38,7 +38,7 @@ interface IElement extends \JsonSerializable
      * API element that casts to a hexadecimal encoded binary to a binary.
      * (direction: output)
      */
-    const TYPE_HEX2BIN = 'hex2bin';
+    const TYPE_HEXBIN = 'hexbin';
 
     /**
      * API date element that casts to a DateTime object.
