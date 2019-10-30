@@ -57,6 +57,16 @@ interface IElement extends \JsonSerializable
     const TYPE_TIME = 'time';
 
     /**
+     * API element that casts to a DateTime object containing time.
+     */
+    const TYPE_TIMESTAMP = 'timestamp';
+
+    /**
+     * API element that casts to a DateTime object containing time.
+     */
+    const TYPE_WEEK = 'week';
+
+    /**
      * JSON configuration key for type value.
      */
     const JSON_TYPE = 'type';
