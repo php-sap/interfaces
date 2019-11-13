@@ -5,8 +5,8 @@ namespace phpsap\interfaces\Api;
 /**
  * Interface IElement
  *
- * API elements are struct or table values and have no direction or optional flag of
- * their own.
+ * API elements are struct or table members and have no direction or optional flag
+ * of their own.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
