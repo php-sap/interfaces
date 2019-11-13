@@ -1,15 +1,12 @@
 <?php
-/**
- * File src/IConnection.php
- *
- * PHP/SAP connection interface.
- *
- * @package interfaces
- * @author  Gregor J.
- * @license MIT
- */
 
 namespace phpsap\interfaces;
+
+use phpsap\interfaces\Config\IConfiguration;
+use phpsap\interfaces\IFunction;
+use phpsap\interfaces\exceptions\IConnectionFailedException;
+use phpsap\interfaces\exceptions\IUnknownFunctionException;
+use phpsap\interfaces\exceptions\IIncompleteConfigException;
 
 /**
  * Interface IConnection
@@ -20,56 +17,34 @@ namespace phpsap\interfaces;
  * @author  Gregor J.
  * @license MIT
  */
-interface IConnection
+interface IConnection extends \JsonSerializable
 {
     /**
      * Inject connection configuration.
-     * @param \phpsap\interfaces\IConfig $config connection configuration
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @param string|array|stdClass|IConfiguration $config Connection configuration
      */
-    public function __construct(IConfig $config);
+    public function __construct($config);
 
     /**
-     * Returns the connection ID.
-     * The connection ID is derived from the configuration. The same configuration
-     * will result in the same connection ID.
-     * @return string
+     * Get the configuration of this connection instance.
+     * @return IConfiguration
      */
-    public function getId();
-
-    /**
-     * Is connection established?
-     * @return bool
-     */
-    public function isConnected();
-
-    /**
-     * Establish a connection to the configured system.
-     * In case the connection is already open, close it first.
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     */
-    public function connect();
-
-    /**
-     * Send a ping request via an established connection to verify that the
-     * connection works.
-     * @return boolean success?
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     */
-    public function ping();
+    public function getConfiguration();
 
     /**
      * Prepare a remote function call and return a function instance.
      * @param string $functionName
-     * @return \phpsap\interfaces\IFunction
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @return IFunction
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
+     * @throws IIncompleteConfigException
      */
     public function prepareFunction($functionName);
 
     /**
-     * Closes the connection.
-     * @return void
+     * Decode a JSON encoded connection configuration.
+     * @param string|array|stdClass|IConfiguration $config Connection configuration
+     * @return IConnection
      */
-    public function close();
+    public static function jsonDecode($config);
 }
