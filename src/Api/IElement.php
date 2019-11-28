@@ -86,13 +86,15 @@ interface IElement extends \JsonSerializable
      * Cast a given output value to the implemented value.
      * @param mixed $value
      * @return bool|int|float|string|\phpsap\DateTime\SapDateTime
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function cast($value);
 
     /**
      * Decode a formerly JSON encoded IElement object.
-     * @param string|\stdClass|array $json
+     * @param string $json JSON encoded IElement object.
      * @return \phpsap\interfaces\IElement
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public static function jsonDecode($json);
 }

@@ -2,13 +2,6 @@
 
 namespace phpsap\interfaces\Config;
 
-use stdClass;
-use LogicException;
-use InvalidArgumentException;
-use phpsap\interfaces\exceptions\IConfigKeyNotFoundException;
-use phpsap\interfaces\Config\IConfigTypeA;
-use phpsap\interfaces\Config\IConfigTypeB;
-
 /**
  * Interface IConfiguration
  * @package phpsap\interfaces\Config
@@ -18,7 +11,8 @@ use phpsap\interfaces\Config\IConfigTypeB;
 interface IConfiguration extends \JsonSerializable
 {
     /**
-     * Get an array of all valid configuration keys and whether they are mandatory.
+     * Get an associative array of all valid configuration keys (as keys of that
+     * array) and whether they are mandatory (as values of that array).
      * @return array
      */
     public static function getValidConfigKeys();
@@ -26,9 +20,9 @@ interface IConfiguration extends \JsonSerializable
     /**
      * Decode a JSON encoded configuration and return the correct configuration
      * class (A or B) depending on the values set in the configuration.
-     * @param string|array|stdClass The JSON encoded configuration (string), or the
-     *                              already decoded JSON (array or stdClass).
-     * @return IConfigTypeA|IConfigTypeB
+     * @param string $config JSON encoded configuration.
+     * @return \phpsap\interfaces\Config\IConfigTypeA|\phpsap\interfaces\Config\IConfigTypeB
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public static function jsonDecode($config);
 }

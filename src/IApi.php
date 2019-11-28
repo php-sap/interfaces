@@ -6,6 +6,11 @@ use phpsap\interfaces\Api\IValue;
 
 /**
  * Interface IApi
+ *
+ * Describes the SAP remote function API. To be precise it describes the SAP remote
+ * function call parameters (input), the returns (output) and the tables (input/
+ * output).
+ *
  * @package phpsap\interfaces
  * @author  Gregor J.
  * @license MIT
@@ -30,6 +35,8 @@ interface IApi extends \JsonSerializable
      * values of the remote function.
      * @param array  $array
      * @return array
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
      */
     public function castInputValues($array);
 
@@ -44,6 +51,8 @@ interface IApi extends \JsonSerializable
      * values of the remote function.
      * @param array  $array
      * @return array
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
      */
     public function castOutputValues($array);
 
@@ -58,6 +67,8 @@ interface IApi extends \JsonSerializable
      * values of the remote function.
      * @param array $array
      * @return array
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
      */
     public function castTables($array);
 
@@ -65,6 +76,7 @@ interface IApi extends \JsonSerializable
      * Decode a formerly JSON encoded IApi object.
      * @param string|\stdClass|array $json
      * @return \phpsap\interfaces\IApi
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public static function jsonDecode($json);
 }

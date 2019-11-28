@@ -5,7 +5,7 @@ namespace phpsap\interfaces\Api;
 /**
  * Interface IArray
  *
- * API arrays behave like values but contain elements as members.
+ * API extend the logic of values but contain member elements.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
@@ -30,7 +30,7 @@ interface IArray extends IValue
 
     /**
      * Return an array of member elements.
-     * @return array
+     * @return \phpsap\interfaces\Api\IElement[]
      */
     public function getMembers();
 

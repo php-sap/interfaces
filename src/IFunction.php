@@ -1,13 +1,4 @@
 <?php
-/**
- * File src/IFunction.php
- *
- * PHP/SAP function interface.
- *
- * @package interfaces
- * @author  Gregor J.
- * @license MIT
- */
 
 namespace phpsap\interfaces;
 
@@ -16,7 +7,9 @@ use phpsap\interfaces\Config\IConfiguration;
 /**
  * Interface IFunction
  *
- * Manage a PHP/SAP remote function call.
+ * Manage a SAP remote function call.
+ * This class can be JSON encoded using PHPs json_encode() and decoded, using the
+ * static method jsonDecode() of this class.
  *
  * @package phpsap\interfaces
  * @author  Gregor J.
@@ -51,9 +44,10 @@ interface IFunction extends \JsonSerializable
 
     /**
      * Set function call parameter.
-     * @param string $name
-     * @param array|string|float|int|bool|null $value
+     * @param string                           $name  The name of the parameter.
+     * @param array|string|float|int|bool|null $value The parameter value.
      * @return \phpsap\interfaces\IFunction
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setParam($name, $value);
 
@@ -66,16 +60,19 @@ interface IFunction extends \JsonSerializable
     /**
      * Invoke the prepared function call.
      * @return array
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
      * @throws \phpsap\interfaces\exceptions\IFunctionCallException
      */
     public function invoke();
 
     /**
-     * Decode a JSON encoded SAP remote function call
-     * @param string|array|stdClass|IConfiguration $config Connection configuration.
-     * @param string                               $function A JSON encoded SAP remote function call.
+     * Decode a JSON encoded SAP remote function call.
+     * A formerly encoded SAP remote function call can only be decoded using a
+     * connection configuration. In case you already have a connection instance, use
+     * the jsonDecodeFunction() method of that instance.
+     * @param \phpsap\interfaces\Config\IConfiguration $config   Connection configuration.
+     * @param string                                   $function JSON encoded SAP remote function call.
      * @return \phpsap\interfaces\IFunction
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
-    public static function jsonDecode($config, $function);
+    public static function jsonDecode(IConfiguration $config, $function);
 }

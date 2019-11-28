@@ -1,13 +1,4 @@
 <?php
-/**
- * File src/exceptions/IUnknownFunctionException.php
- *
- * The requested remote function could not be found.
- *
- * @package interfaces
- * @author  Gregor J.
- * @license MIT
- */
 
 namespace phpsap\interfaces\exceptions;
 
