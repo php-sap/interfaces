@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+ * Class IConfigKeyNotFoundException
  *
  * The configuration key doesn't exist for the current SAP configuration (A or B).
  *

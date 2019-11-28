@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IUnknownFunctionException
+ * Class IUnknownFunctionException
  *
  * The requested remote function could not be found.
  *

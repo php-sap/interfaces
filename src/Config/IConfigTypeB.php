@@ -8,7 +8,7 @@ namespace phpsap\interfaces\Config;
  * Interface to configure connection parameters for SAP remote function calls using
  * load balancing (type B).
  *
- * @package phpsap\interfaces
+ * @package phpsap\interfaces\Config
  * @author  Gregor J.
  * @license MIT
  */

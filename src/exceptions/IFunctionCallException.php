@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IFunctionCallException
+ * Class IFunctionCallException
  *
  * The SAP remote function call failed.
  *

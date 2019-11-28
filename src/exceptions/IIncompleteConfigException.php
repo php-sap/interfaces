@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IIncompleteConfigException
+ * Class IIncompleteConfigException
  *
  * The configuration is incomplete.
  *

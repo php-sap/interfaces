@@ -8,7 +8,7 @@ namespace phpsap\interfaces\Config;
  * Interface to configure connection parameters for SAP remote function calls using
  * a specific SAP application server (type A).
  *
- * @package phpsap\interfaces
+ * @package phpsap\interfaces\Config
  * @author  Gregor J.
  * @license MIT
  */

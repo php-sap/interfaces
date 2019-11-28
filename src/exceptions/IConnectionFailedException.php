@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IConnectionFailedException
+ * Class IConnectionFailedException
  *
  * The SAP connection failed.
  *

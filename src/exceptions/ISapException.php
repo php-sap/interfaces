@@ -3,7 +3,7 @@
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\ISapException
+ * Class ISapException
  *
  * Interface for a generic SAP exception.
  *
