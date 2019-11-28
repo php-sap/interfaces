@@ -5,8 +5,8 @@ namespace phpsap\interfaces\Api;
 /**
  * Interface IValue
  *
- * API values extend the logic of an element but have a direction (input, output or
- * table) and an optional flag, unlike elements.
+ * API values extend the logic of an element but have a direction (input or output)
+ * and an optional flag, unlike elements.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
