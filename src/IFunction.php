@@ -11,6 +11,8 @@
 
 namespace phpsap\interfaces;
 
+use phpsap\interfaces\Config\IConfiguration;
+
 /**
  * Interface IFunction
  *
@@ -20,7 +22,7 @@ namespace phpsap\interfaces;
  * @author  Gregor J.
  * @license MIT
  */
-interface IFunction
+interface IFunction extends \JsonSerializable
 {
     /**
      * Get the function name.
@@ -56,7 +58,7 @@ interface IFunction
     public function setParam($name, $value);
 
     /**
-     * Get all set parameters.
+     * Returns all previously set parameters.
      * @return array Associative array of all parameters that have been set.
      */
     public function getParams();
@@ -68,4 +70,12 @@ interface IFunction
      * @throws \phpsap\interfaces\exceptions\IFunctionCallException
      */
     public function invoke();
+
+    /**
+     * Decode a JSON encoded SAP remote function call
+     * @param string|array|stdClass|IConfiguration $config Connection configuration.
+     * @param string                               $function A JSON encoded SAP remote function call.
+     * @return \phpsap\interfaces\IFunction
+     */
+    public static function jsonDecode($config, $function);
 }
