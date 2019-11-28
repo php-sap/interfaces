@@ -29,6 +29,15 @@ interface IArray extends IValue
     const JSON_MEMBERS = 'members';
 
     /**
+     * Cast a given output value to the implemented value.
+     * @param array $struct The output array to typecast.
+     * @return array
+     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     */
+    public function cast($struct);
+
+    /**
      * Return an array of member elements.
      * @return \phpsap\interfaces\Api\IElement[]
      */

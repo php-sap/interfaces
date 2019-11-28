@@ -84,7 +84,7 @@ interface IElement extends \JsonSerializable
 
     /**
      * Cast a given output value to the implemented value.
-     * @param mixed $value
+     * @param bool|int|float|string $value The output to typecast.
      * @return bool|int|float|string|\phpsap\DateTime\SapDateTime
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
