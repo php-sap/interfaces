@@ -3,6 +3,7 @@
 namespace phpsap\interfaces;
 
 use phpsap\interfaces\Config\IConfiguration;
+use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
  * Interface IConnection
@@ -15,7 +16,7 @@ use phpsap\interfaces\Config\IConfiguration;
  * @author  Gregor J.
  * @license MIT
  */
-interface IConnection extends \JsonSerializable
+interface IConnection extends IJsonSerializable
 {
     /**
      * Initialize the connection with its configuration.

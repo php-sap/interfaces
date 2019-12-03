@@ -3,6 +3,7 @@
 namespace phpsap\interfaces;
 
 use phpsap\interfaces\Config\IConfiguration;
+use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
  * Interface IFunction
@@ -15,7 +16,7 @@ use phpsap\interfaces\Config\IConfiguration;
  * @author  Gregor J.
  * @license MIT
  */
-interface IFunction extends \JsonSerializable
+interface IFunction extends IJsonSerializable
 {
     /**
      * Get the function name.

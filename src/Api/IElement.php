@@ -2,6 +2,8 @@
 
 namespace phpsap\interfaces\Api;
 
+use phpsap\interfaces\Util\IJsonSerializable;
+
 /**
  * Interface IElement
  *
@@ -12,7 +14,7 @@ namespace phpsap\interfaces\Api;
  * @author  Gregor J.
  * @license MIT
  */
-interface IElement extends \JsonSerializable
+interface IElement extends IJsonSerializable
 {
     /**
      * API element that casts to PHP string.

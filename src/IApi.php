@@ -3,6 +3,7 @@
 namespace phpsap\interfaces;
 
 use phpsap\interfaces\Api\IValue;
+use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
  * Interface IApi
@@ -15,7 +16,7 @@ use phpsap\interfaces\Api\IValue;
  * @author  Gregor J.
  * @license MIT
  */
-interface IApi extends \JsonSerializable
+interface IApi extends IJsonSerializable
 {
     /**
      * Add a value, struct or table of the remote function.
