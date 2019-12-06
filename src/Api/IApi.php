@@ -1,8 +1,7 @@
 <?php
 
-namespace phpsap\interfaces;
+namespace phpsap\interfaces\Api;
 
-use phpsap\interfaces\Api\IValue;
 use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
@@ -21,7 +20,7 @@ interface IApi extends IJsonSerializable
     /**
      * Add a value, struct or table of the remote function.
      * @param \phpsap\interfaces\Api\IValue $value
-     * @return \phpsap\interfaces\IApi
+     * @return $this
      */
     public function add(IValue $value);
 
@@ -72,12 +71,4 @@ interface IApi extends IJsonSerializable
      * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
      */
     public function castTables($array);
-
-    /**
-     * Decode a formerly JSON encoded IApi object.
-     * @param string|\stdClass|array $json
-     * @return \phpsap\interfaces\IApi
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     */
-    public static function jsonDecode($json);
 }

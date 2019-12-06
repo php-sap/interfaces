@@ -91,12 +91,4 @@ interface IElement extends IJsonSerializable
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function cast($value);
-
-    /**
-     * Decode a formerly JSON encoded IElement object.
-     * @param string $json JSON encoded IElement object.
-     * @return \phpsap\interfaces\IElement
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     */
-    public static function jsonDecode($json);
 }
