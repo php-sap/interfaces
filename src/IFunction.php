@@ -68,11 +68,12 @@ interface IFunction extends IJsonSerializable
     public function setConfiguration(IConfiguration $config);
 
     /**
-     * Connect to the SAP remote system and retrieve the API of the SAP remote function.
-     * This ignores any API settings in this class.
+     * Connect to the SAP remote system and extract the API of the SAP remote
+     * function. This ignores any API settings in this class.
      * @return \phpsap\interfaces\Api\IApi
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
-    public function retrieveApi();
+    public function extractApi();
 
     /**
      * Get the remote function API.
