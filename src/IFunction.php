@@ -72,6 +72,8 @@ interface IFunction extends IJsonSerializable
      * function. This ignores any API settings in this class.
      * @return \phpsap\interfaces\Api\IApi
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
      */
     public function extractApi();
 
@@ -81,6 +83,8 @@ interface IFunction extends IJsonSerializable
      * on the fly by connecting to the SAP remote system.
      * @return \phpsap\interfaces\Api\IApi
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
+     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
      */
     public function getApi();
 
@@ -121,7 +125,7 @@ interface IFunction extends IJsonSerializable
      * Remove all parameters that have been set and start over.
      * @return $this
      */
-    public function reset();
+    public function resetParams();
 
     /**
      * Invoke the SAP remote function call with all parameters.
