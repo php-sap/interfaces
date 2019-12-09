@@ -105,24 +105,26 @@ interface IFunction extends IJsonSerializable
     public function getParams();
 
     /**
-     * Set function call parameter.
-     * @param string                           $name  The name of the parameter.
-     * @param array|string|float|int|bool|null $value The parameter value.
+     * Set a single SAP remote function call parameter.
+     * @param string                           $name  Name of the parameter to set.
+     * @param array|string|float|int|bool|null $value Value of the parameter.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setParam($name, $value);
 
     /**
-     * Set function call parameter.
-     * @param array $params The SAP remote function call parameters.
+     * Extract all expected SAP remote function call parameters from the given array
+     * and set them.
+     * @param array $params An array of SAP remote function call parameters.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setParams(array $params);
 
     /**
-     * Remove all parameters that have been set and start over.
+     * Remove all SAP remote function call parameters that have been set and start
+     * over.
      * @return $this
      */
     public function resetParams();
