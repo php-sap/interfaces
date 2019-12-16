@@ -31,44 +31,14 @@ interface IApi extends IJsonSerializable
     public function getInputValues();
 
     /**
-     * Typecast the values of a given array to their according types of the input
-     * values of the remote function.
-     * @param array  $array
-     * @return array
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
-     */
-    public function castInputValues($array);
-
-    /**
      * Get all output values of the remote function.
      * @return \phpsap\interfaces\Api\IValue[]
      */
     public function getOutputValues();
 
     /**
-     * Typecast the values of a given array to their according types of the output
-     * values of the remote function.
-     * @param array  $array
-     * @return array
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
-     */
-    public function castOutputValues($array);
-
-    /**
      * Get all tables of the remote function.
      * @return \phpsap\interfaces\Api\IArray[]
      */
     public function getTables();
-
-    /**
-     * Typecast the values of a given array to their according types of the table
-     * values of the remote function.
-     * @param array $array
-     * @return array
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
-     */
-    public function castTables($array);
 }
