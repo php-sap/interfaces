@@ -23,6 +23,21 @@ interface IConfigCommon extends IConfiguration
     const TRACE_FULL    = 3;
 
     /**
+     * The username to use for authentication.
+     */
+    const JSON_USER = 'user';
+
+    /**
+     * The password to use for authentication.
+     */
+    const JSON_PASSWD = 'passwd';
+
+    /**
+     * The destination in RfcOpen.
+     */
+    const JSON_CLIENT = 'client';
+
+    /**
      * If the connection needs to be made through a firewall using a SAPRouter,
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
@@ -43,21 +58,6 @@ interface IConfigCommon extends IConfiguration
     const JSON_CODEPAGE = 'codepage';
 
     /**
-     * The username to use for authentication.
-     */
-    const JSON_USER = 'user';
-
-    /**
-     * The password to use for authentication.
-     */
-    const JSON_PASSWD = 'passwd';
-
-    /**
-     * The destination in RfcOpen.
-     */
-    const JSON_CLIENT = 'client';
-
-    /**
      * The logon language.
      */
     const JSON_LANG = 'lang';
@@ -66,6 +66,51 @@ interface IConfigCommon extends IConfiguration
      * The destination in RfcOpenConnection.
      */
     const JSON_DEST = 'dest';
+
+    /**
+     * Get the username to use for authentication.
+     * @return string The username.
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     */
+    public function getUser();
+
+    /**
+     * Set the username to use for authentication.
+     * @param string $user The username.
+     * @return $this
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     */
+    public function setUser($user);
+
+    /**
+     * Get the password to use for authentication.
+     * @return string The password
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     */
+    public function getPasswd();
+
+    /**
+     * Get the password to use for authentication.
+     * @param string $passwd The password.
+     * @return $this
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     */
+    public function setPasswd($passwd);
+
+    /**
+     * Get the client.
+     * @return string The client.
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     */
+    public function getClient();
+
+    /**
+     * Set the client.
+     * @param string $client The destination in RfcOpen.
+     * @return $this
+     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     */
+    public function setClient($client);
 
     /**
      * In case the connection needs to be made through a firewall using a SAPRouter,
@@ -118,51 +163,6 @@ interface IConfigCommon extends IConfiguration
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setCodepage($codepage);
-
-    /**
-     * Get the username to use for authentication.
-     * @return string The username.
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     */
-    public function getUser();
-
-    /**
-     * Set the username to use for authentication.
-     * @param string $user The username.
-     * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     */
-    public function setUser($user);
-
-    /**
-     * Get the password to use for authentication.
-     * @return string The password
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     */
-    public function getPasswd();
-
-    /**
-     * Get the password to use for authentication.
-     * @param string $passwd The password.
-     * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     */
-    public function setPasswd($passwd);
-
-    /**
-     * Get the client.
-     * @return string The client.
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     */
-    public function getClient();
-
-    /**
-     * Set the client.
-     * @param string $client The destination in RfcOpen.
-     * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     */
-    public function setClient($client);
 
     /**
      * Get the logon Language.
