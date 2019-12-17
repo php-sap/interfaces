@@ -35,14 +35,14 @@ interface IConfigTypeA extends IConfigCommon
     const JSON_GWSERV = 'gwserv';
 
     /**
-     * Get the host name of a specific SAP application server.
+     * Get the hostname of a specific SAP application server.
      * @return string The hostname of a specific SAP application server.
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getAshost();
 
     /**
-     * Set the host name of a specific SAP application server.
+     * Set the hostname of a specific SAP application server.
      * @param string $ashost The hostname of a specific SAP application server.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
