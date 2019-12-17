@@ -47,7 +47,7 @@ interface IConfigTypeB extends IConfigCommon
 
     /**
      * Get the name of SAP system, optional; default: destination
-     * @return string|null
+     * @return string|null The name of the SAP system or NULL in case no name has been defined.
      */
     public function getR3name();
 
@@ -61,7 +61,7 @@ interface IConfigTypeB extends IConfigCommon
 
     /**
      * Get the group name of the application servers, optional; default: PUBLIC.
-     * @return string|null
+     * @return string|null The name of the group  or NULL in case no group has been defined.
      */
     public function getGroup();
 

@@ -36,14 +36,14 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Get the host name of a specific SAP application server.
-     * @return string
+     * @return string The hostname of a specific SAP application server.
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getAshost();
 
     /**
      * Set the host name of a specific SAP application server.
-     * @param string $ashost The host name of a specific SAP application server.
+     * @param string $ashost The hostname of a specific SAP application server.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
@@ -51,7 +51,7 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Get the SAP system number.
-     * @return string
+     * @return string The SAP system number.
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getSysnr();
@@ -65,28 +65,28 @@ interface IConfigTypeA extends IConfigCommon
     public function setSysnr($sysnr);
 
     /**
-     * Optional gateway on application server; default: null
-     * @return string|null
+     * Get the gateway host on the application server.
+     * @return string|null The gateway host or NULL in case no gateway host has been defined.
      */
     public function getGwhost();
 
     /**
-     * Set the gateway on the application server.
-     * @param string $gwhost The gateway on the application server.
+     * Set the gateway host on the application server.
+     * @param string $gwhost The gateway host.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setGwhost($gwhost);
 
     /**
-     * Optional gateway on application server; default: null
-     * @return string|null
+     * Get the gateway service on the application server.
+     * @return string|null The gateway service or NULL in case no gateway service has been defined.
      */
     public function getGwserv();
 
     /**
-     * Set the gateway on the application server.
-     * @param string $gwserv The gateway on the application server.
+     * Get the gateway service on the application server.
+     * @param string $gwserv The gateway service on the application server.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */

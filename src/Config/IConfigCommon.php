@@ -84,7 +84,7 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Get the password to use for authentication.
-     * @return string The password
+     * @return string The password.
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getPasswd();
@@ -99,14 +99,14 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Get the client.
-     * @return string The client.
+     * @return string The client
      * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getClient();
 
     /**
      * Set the client.
-     * @param string $client The destination in RfcOpen.
+     * @param string $client The client.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
@@ -124,7 +124,7 @@ interface IConfigCommon extends IConfiguration
      * In case the connection needs to be made through a firewall using a SAPRouter,
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
-     * @param string $saprouter The saprouter configuration parameter.
+     * @param string $saprouter The saprouter.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
