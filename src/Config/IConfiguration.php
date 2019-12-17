@@ -7,7 +7,7 @@ use phpsap\interfaces\Util\IJsonSerializable;
 /**
  * Interface IConfiguration
  *
- * Defines the basic behavior of a configuration class.
+ * Parent class to all configuration types (A and B).
  *
  * @package phpsap\interfaces\Config
  * @author  Gregor J.

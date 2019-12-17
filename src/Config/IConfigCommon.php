@@ -71,8 +71,7 @@ interface IConfigCommon extends IConfiguration
      * In case the connection needs to be made through a firewall using a SAPRouter,
      * the parameters are in the following format:
      * /H/hostname/S/portnumber/H/
-     * @return string the saprouter
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return string|null The saprouter or NULL in case the saprouter hasn't been set.
      */
     public function getSaprouter();
 
@@ -81,22 +80,21 @@ interface IConfigCommon extends IConfiguration
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
      * @param string $saprouter The saprouter configuration parameter.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setSaprouter($saprouter);
 
     /**
      * Get the trace level (0-3). See constants TRACE_*.
-     * @return int the trace level
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return int|null The trace level or NULL in case the trace level hasn't been set.
      */
     public function getTrace();
 
     /**
      * Set the trace level (0-3). See constants TRACE_*.
      * @param int $trace The trace level.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setTrace($trace);
@@ -106,8 +104,7 @@ interface IConfigCommon extends IConfiguration
      * non-ISO-Latin-1 user name or password. The RFC library will then use that
      * codepage for the initial handshake, thus preserving the characters in
      * username/password.
-     * @return int the codepage
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return int|null The codepage or NULL in case the codepage hasn't been set.
      */
     public function getCodepage();
 
@@ -117,82 +114,80 @@ interface IConfigCommon extends IConfiguration
      * codepage for the initial handshake, thus preserving the characters in
      * username/password.
      * @param int $codepage The codepage.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setCodepage($codepage);
 
     /**
      * Get the username to use for authentication.
-     * @return string the username
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return string The username.
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getUser();
 
     /**
      * Set the username to use for authentication.
      * @param string $user The username.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setUser($user);
 
     /**
      * Get the password to use for authentication.
-     * @return string the password
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return string The password
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getPasswd();
 
     /**
      * Get the password to use for authentication.
      * @param string $passwd The password.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setPasswd($passwd);
 
     /**
-     * Get the destination in RfcOpen.
-     * @return string Get the destination in RfcOpen.
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * Get the client.
+     * @return string The client.
+     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
      */
     public function getClient();
 
     /**
-     * Set the destination in RfcOpen.
+     * Set the client.
      * @param string $client The destination in RfcOpen.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setClient($client);
 
     /**
      * Get the logon Language.
-     * @return string The logon language.
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return string|null The logon language or NULL in case the logon language hasn't been set.
      */
     public function getLang();
 
     /**
-     * Set the logon Language.
+     * Set the logon language.
      * @param string $lang The logon language.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setLang($lang);
 
     /**
      * Get the destination in RfcOpenConnection.
-     * @return string the logon language
-     * @throws \phpsap\interfaces\exceptions\IConfigKeyNotFoundException
+     * @return string|null The destination or NULL in case the destination hasn't been set.
      */
     public function getDest();
 
     /**
      * Set the destination in RfcOpenConnection.
      * @param string $dest The destination in RfcOpenConnection.
-     * @return \phpsap\interfaces\Config\IConfigCommon
+     * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function setDest($dest);
