@@ -15,14 +15,14 @@ namespace phpsap\interfaces\Config;
 interface IConfigTypeB extends IConfigCommon
 {
     /**
-     * The name of SAP system, optional; default: destination
-     */
-    const JSON_R3NAME = 'r3name';
-
-    /**
      * The host name of the message server.
      */
     const JSON_MSHOST = 'mshost';
+
+    /**
+     * The name of SAP system, optional; default: destination
+     */
+    const JSON_R3NAME = 'r3name';
 
     /**
      * The group name of the application servers.
