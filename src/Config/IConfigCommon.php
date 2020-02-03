@@ -15,12 +15,24 @@ namespace phpsap\interfaces\Config;
 interface IConfigCommon extends IConfiguration
 {
     /**
-     * Define trace levels 0-3.
+     * Disable tracing.
      */
-    const TRACE_OFF     = 0;
-    const TRACE_BRIEF   = 1;
+    const TRACE_OFF = 0;
+
+    /**
+     * Brief trace level.
+     */
+    const TRACE_BRIEF = 1;
+
+    /**
+     * Verbose trace level.
+     */
     const TRACE_VERBOSE = 2;
-    const TRACE_FULL    = 3;
+
+    /**
+     * Full trace level.
+     */
+    const TRACE_FULL = 3;
 
     /**
      * The username to use for authentication.
@@ -90,7 +102,7 @@ interface IConfigCommon extends IConfiguration
     public function getPasswd();
 
     /**
-     * Get the password to use for authentication.
+     * Set the password to use for authentication.
      * @param string $passwd The password.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
@@ -113,9 +125,7 @@ interface IConfigCommon extends IConfiguration
     public function setClient($client);
 
     /**
-     * In case the connection needs to be made through a firewall using a SAPRouter,
-     * the parameters are in the following format:
-     * /H/hostname/S/portnumber/H/
+     * Get the SAPRouter in case the connection needs to be made through a firewall.
      * @return string|null The saprouter or NULL in case the saprouter hasn't been set.
      */
     public function getSaprouter();
@@ -131,13 +141,13 @@ interface IConfigCommon extends IConfiguration
     public function setSaprouter($saprouter);
 
     /**
-     * Get the trace level (0-3). See constants TRACE_*.
+     * Get the trace level. See constants TRACE_*.
      * @return int|null The trace level or NULL in case the trace level hasn't been set.
      */
     public function getTrace();
 
     /**
-     * Set the trace level (0-3). See constants TRACE_*.
+     * Set the trace level. See constants TRACE_*.
      * @param int $trace The trace level.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
