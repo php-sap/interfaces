@@ -85,7 +85,7 @@ interface IConfigTypeA extends IConfigCommon
     public function getGwserv();
 
     /**
-     * Get the gateway service on the application server.
+     * Set the gateway service on the application server.
      * @param string $gwserv The gateway service on the application server.
      * @return $this
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
