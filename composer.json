@@ -11,9 +11,6 @@
     }
   ],
   "homepage": "https://php-sap.github.io",
-  "support": {
-    "docs": "https://php-sap.github.io/interfaces"
-  },
   "keywords": [
     "phpsap",
     "php-sap",
@@ -24,7 +21,8 @@
   },
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.5.0"
+    "php": "^5.5|^7.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

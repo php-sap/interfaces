@@ -1,18 +1,9 @@
 <?php
-/**
- * File src/exceptions/IConnectionFailedException.php
- *
- * The SAP connection failed.
- *
- * @package interfaces
- * @author  Gregor J.
- * @license MIT
- */
 
 namespace phpsap\interfaces\exceptions;
 
 /**
- * Class phpsap\interfaces\exceptions\IConnectionFailedException
+ * Class IConnectionFailedException
  *
  * The SAP connection failed.
  *
