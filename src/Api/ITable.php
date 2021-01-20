@@ -1,0 +1,25 @@
+<?php
+
+namespace phpsap\interfaces\Api;
+
+/**
+ * Interface ITable
+ *
+ * API extend the logic of arrays but contains rows of member elements.
+ *
+ * @package phpsap\interfaces\Api
+ * @author  Gregor J.
+ * @license MIT
+ */
+interface ITable extends IArray
+{
+    /**
+     * API table element.
+     */
+    const DIRECTION_TABLE = 'table';
+
+    /**
+     * API element that casts to a PHP array of associative arrays.
+     */
+    const TYPE_TABLE = 'table';
+}

@@ -87,7 +87,7 @@ interface IElement extends IJsonSerializable
     /**
      * Cast a given output value to the implemented value.
      * @param bool|int|float|string $value The output to typecast.
-     * @return bool|int|float|string|\phpsap\DateTime\SapDateTime
+     * @return bool|int|float|string|\phpsap\DateTime\SapDateTime|\phpsap\DateTime\SapDateInterval
      * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
      */
     public function cast($value);

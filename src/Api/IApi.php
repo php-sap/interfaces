@@ -38,7 +38,7 @@ interface IApi extends IJsonSerializable
 
     /**
      * Get all tables of the remote function.
-     * @return \phpsap\interfaces\Api\IArray[]
+     * @return \phpsap\interfaces\Api\ITable[]
      */
     public function getTables();
 }
