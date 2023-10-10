@@ -6,11 +6,10 @@ on:
   pull_request:
     branches:
       - "main"
-
 permissions:
   contents: "read"
-
 jobs:
+  # PHP lint for different PHP versions
   lint:
     runs-on: "ubuntu-latest"
     strategy:
@@ -23,50 +22,48 @@ jobs:
     name: "PHP ${{ matrix.php-version }} lint"
     steps:
       - # git checkout
-        name: "Checkout code"
+        name: "git checkout"
         uses: "actions/checkout@v3"
-      - # setup PHP
+      - # Setup PHP
         name: "Setup PHP"
         uses: "shivammathur/setup-php@v2"
         with:
           php-version: "${{ matrix.php-version }}"
-      - # check PHP version
+      - # Check PHP version
         name: "Check PHP version"
         run: "php -v"
-      - # run lint
+      - # Lint PHP files
         name: "Lint PHP files"
         run: |
           for file in $(find src/ -type f -name '*.php'); do
             echo -n "==> ${file}: ";
             php -l "${file}";
           done
+  # install composer packages and validate coding standards
   build:
-
     runs-on: ubuntu-latest
-
     name: "PHP composer & CodeSniffer"
-
     steps:
-      - uses: actions/checkout@v3
-
-      - # check PHP version
+      - # git checkout
+        name: "git checkout"
+        uses: "actions/checkout@v3"
+      - # Check PHP version
         name: "Check PHP version"
         run: "php -v"
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v3
+      - # Validate composer.json and composer.lock
+        name: "Validate composer.json and composer.lock"
+        run: "composer validate --strict"
+      - # Cache Composer packages
+        name: "Cache Composer packages"
+        id: "composer-cache"
+        uses: "actions/cache@v3"
         with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
-
-      - name: Run PHP_CodeSniffer validations
-        run: vendor/bin/phpcs
+          path: "vendor"
+          key: "${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}"
+          restore-keys: "${{ runner.os }}-php-"
+      - # Install dependencies
+        name: "Install composer dependencies"
+        run: "composer install --prefer-dist --no-progress"
+      - # Run PHP_CodeSniffer validations
+        name: "Run PHP_CodeSniffer validations"
+        run: "vendor/bin/phpcs"
