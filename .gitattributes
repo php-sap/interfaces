@@ -1,5 +1,6 @@
 *               text eol=lf
 .gitattributes  export-ignore
+.github			export-ignore
 .gitignore      export-ignore
 composer.*      export-ignore
 README.md       export-ignore
