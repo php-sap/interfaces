@@ -16,6 +16,7 @@ jobs:
     strategy:
       matrix:
         php-version:
+          - "5.5"
           - "7.2"
           - "7.4"
           - "8.1"
