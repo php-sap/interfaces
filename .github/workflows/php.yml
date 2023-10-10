@@ -20,7 +20,7 @@ jobs:
           - "7.2"
           - "7.4"
           - "8.1"
-    name: "PHP ${{ matrix.php-versions }} lint"
+    name: "PHP ${{ matrix.php-version }} lint"
     steps:
       - # git checkout
         name: "Checkout code"
