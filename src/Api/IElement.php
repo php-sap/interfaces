@@ -2,6 +2,9 @@
 
 namespace phpsap\interfaces\Api;
 
+use phpsap\DateTime\SapDateInterval;
+use phpsap\DateTime\SapDateTime;
+use phpsap\interfaces\exceptions\IInvalidArgumentException;
 use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
@@ -87,8 +90,8 @@ interface IElement extends IJsonSerializable
     /**
      * Cast a given output value to the implemented value.
      * @param bool|int|float|string $value The output to typecast.
-     * @return bool|int|float|string|\phpsap\DateTime\SapDateTime|\phpsap\DateTime\SapDateInterval
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @return bool|int|float|string|SapDateTime|SapDateInterval
+     * @throws IInvalidArgumentException
      */
     public function cast($value);
 }

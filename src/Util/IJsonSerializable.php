@@ -3,6 +3,7 @@
 namespace phpsap\interfaces\Util;
 
 use JsonSerializable;
+use phpsap\interfaces\exceptions\IInvalidArgumentException;
 
 /**
  * Interface IJsonSerializable
@@ -18,8 +19,8 @@ interface IJsonSerializable extends JsonSerializable
     /**
      * Decode a formerly JSON encoded object.
      * @param string $json JSON encoded object.
-     * @return \phpsap\interfaces\Util\IJsonSerializable
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @return IJsonSerializable
+     * @throws IInvalidArgumentException
      */
     public static function jsonDecode($json);
 }

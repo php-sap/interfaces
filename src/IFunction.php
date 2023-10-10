@@ -4,6 +4,11 @@ namespace phpsap\interfaces;
 
 use phpsap\interfaces\Api\IApi;
 use phpsap\interfaces\Config\IConfiguration;
+use phpsap\interfaces\exceptions\IConnectionFailedException;
+use phpsap\interfaces\exceptions\IFunctionCallException;
+use phpsap\interfaces\exceptions\IIncompleteConfigException;
+use phpsap\interfaces\exceptions\IInvalidArgumentException;
+use phpsap\interfaces\exceptions\IUnknownFunctionException;
 use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
@@ -46,12 +51,12 @@ interface IFunction extends IJsonSerializable
      *
      * @param string                                        $name   SAP remote function name.
      * @param array|null                                    $params SAP remote function call parameters. Default: null
-     * @param \phpsap\interfaces\Config\IConfiguration|null $config SAP connection configuration. Default: null
-     * @param \phpsap\interfaces\Api\IApi|null              $api    SAP remote function call API. Default: null
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @param  IConfiguration|null $config SAP connection configuration. Default: null
+     * @param  IApi|null              $api    SAP remote function call API. Default: null
+     * @throws IInvalidArgumentException
+     * @throws IIncompleteConfigException
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
      */
     public function __construct($name, array $params = null, IConfiguration $config = null, IApi $api = null);
 
@@ -66,7 +71,7 @@ interface IFunction extends IJsonSerializable
      *
      * In case no configuration has been set, null will be returned.
      *
-     * @return \phpsap\interfaces\Config\IConfiguration|null
+     * @return IConfiguration|null
      */
     public function getConfiguration();
 
@@ -76,7 +81,7 @@ interface IFunction extends IJsonSerializable
      * Using this configuration, the SAP remote function API can be queried and
      * SAP remote function calls can be invoked.
      *
-     * @param \phpsap\interfaces\Config\IConfiguration $config
+     * @param  IConfiguration  $config
      * @return $this
      */
     public function setConfiguration(IConfiguration $config);
@@ -93,10 +98,10 @@ interface IFunction extends IJsonSerializable
      * Every time this method is called, it will query the SAP remote system and
      * extract the API of the SAP remote function.
      *
-     * @return \phpsap\interfaces\Api\IApi
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @return IApi
+     * @throws IIncompleteConfigException
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
      */
     public function extractApi();
 
@@ -110,10 +115,10 @@ interface IFunction extends IJsonSerializable
      * In case extractApi() has to be called, a connection configuration needs to be
      * present. Use setConfiguration() to set the connection configuration.
      *
-     * @return \phpsap\interfaces\Api\IApi
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @return IApi
+     * @throws IIncompleteConfigException
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
      */
     public function getApi();
 
@@ -124,7 +129,7 @@ interface IFunction extends IJsonSerializable
      * calling getApi(). Instead getApi() will return whatever has been set using
      * this method.
      *
-     * @param \phpsap\interfaces\Api\IApi $api
+     * @param  IApi  $api
      * @return $this
      */
     public function setApi(IApi $api);
@@ -147,10 +152,10 @@ interface IFunction extends IJsonSerializable
      *
      * @param array $params An array of SAP remote function call parameters.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
+     * @throws IInvalidArgumentException
+     * @throws IIncompleteConfigException
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
      */
     public function setParams(array $params);
 
@@ -169,10 +174,10 @@ interface IFunction extends IJsonSerializable
      * call. Use setConfiguration() to set the connection configuration.
      *
      * @return array
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
-     * @throws \phpsap\interfaces\exceptions\IConnectionFailedException
-     * @throws \phpsap\interfaces\exceptions\IUnknownFunctionException
-     * @throws \phpsap\interfaces\exceptions\IFunctionCallException
+     * @throws IIncompleteConfigException
+     * @throws IConnectionFailedException
+     * @throws IUnknownFunctionException
+     * @throws IFunctionCallException
      */
     public function invoke();
 }

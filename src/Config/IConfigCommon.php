@@ -2,6 +2,9 @@
 
 namespace phpsap\interfaces\Config;
 
+use phpsap\interfaces\exceptions\IIncompleteConfigException;
+use phpsap\interfaces\exceptions\IInvalidArgumentException;
+
 /**
  * Interface IConfig
  *
@@ -82,7 +85,7 @@ interface IConfigCommon extends IConfiguration
     /**
      * Get the username to use for authentication.
      * @return string The username.
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @throws IIncompleteConfigException
      */
     public function getUser();
 
@@ -90,14 +93,14 @@ interface IConfigCommon extends IConfiguration
      * Set the username to use for authentication.
      * @param string $user The username.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setUser($user);
 
     /**
      * Get the password to use for authentication.
      * @return string The password.
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @throws IIncompleteConfigException
      */
     public function getPasswd();
 
@@ -105,14 +108,14 @@ interface IConfigCommon extends IConfiguration
      * Set the password to use for authentication.
      * @param string $passwd The password.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setPasswd($passwd);
 
     /**
      * Get the client.
      * @return string The client
-     * @throws \phpsap\interfaces\exceptions\IIncompleteConfigException
+     * @throws IIncompleteConfigException
      */
     public function getClient();
 
@@ -120,7 +123,7 @@ interface IConfigCommon extends IConfiguration
      * Set the client.
      * @param string $client The client.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setClient($client);
 
@@ -136,7 +139,7 @@ interface IConfigCommon extends IConfiguration
      * /H/hostname/S/portnumber/H/
      * @param string $saprouter The saprouter.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setSaprouter($saprouter);
 
@@ -150,7 +153,7 @@ interface IConfigCommon extends IConfiguration
      * Set the trace level. See constants TRACE_*.
      * @param int $trace The trace level.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setTrace($trace);
 
@@ -170,7 +173,7 @@ interface IConfigCommon extends IConfiguration
      * username/password.
      * @param int $codepage The codepage.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setCodepage($codepage);
 
@@ -184,7 +187,7 @@ interface IConfigCommon extends IConfiguration
      * Set the logon language.
      * @param string $lang The logon language.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setLang($lang);
 
@@ -198,7 +201,7 @@ interface IConfigCommon extends IConfiguration
      * Set the destination in RfcOpenConnection.
      * @param string $dest The destination in RfcOpenConnection.
      * @return $this
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IInvalidArgumentException
      */
     public function setDest($dest);
 }

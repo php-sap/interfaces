@@ -19,26 +19,26 @@ interface IApi extends IJsonSerializable
 {
     /**
      * Add a value, struct or table of the remote function.
-     * @param \phpsap\interfaces\Api\IValue $value
+     * @param  IValue  $value
      * @return $this
      */
     public function add(IValue $value);
 
     /**
      * Get all input values of the remote function.
-     * @return \phpsap\interfaces\Api\IValue[]
+     * @return IValue[]
      */
     public function getInputValues();
 
     /**
      * Get all output values of the remote function.
-     * @return \phpsap\interfaces\Api\IValue[]
+     * @return IValue[]
      */
     public function getOutputValues();
 
     /**
      * Get all tables of the remote function.
-     * @return \phpsap\interfaces\Api\ITable[]
+     * @return ITable[]
      */
     public function getTables();
 }

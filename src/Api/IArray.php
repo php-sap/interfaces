@@ -2,6 +2,9 @@
 
 namespace phpsap\interfaces\Api;
 
+use phpsap\interfaces\exceptions\IArrayElementMissingException;
+use phpsap\interfaces\exceptions\IInvalidArgumentException;
+
 /**
  * Interface IArray
  *
@@ -22,14 +25,14 @@ interface IArray extends IValue
      * Cast a given output value to the implemented value.
      * @param array $value The output array to typecast.
      * @return array
-     * @throws \phpsap\interfaces\exceptions\IArrayElementMissingException
-     * @throws \phpsap\interfaces\exceptions\IInvalidArgumentException
+     * @throws IArrayElementMissingException
+     * @throws IInvalidArgumentException
      */
     public function cast($value);
 
     /**
      * Return an array of member elements.
-     * @return \phpsap\interfaces\Api\IElement[]
+     * @return IElement[]
      */
     public function getMembers();
 }
