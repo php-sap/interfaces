@@ -1,18 +1,49 @@
-name: PHP Composer
-
+name: PHP
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "main"
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
 
 permissions:
-  contents: read
+  contents: "read"
 
 jobs:
+  lint:
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        php-version:
+          - "7.2"
+          - "7.4"
+          - "8.1"
+    name: "PHP ${{ matrix.php-versions }} lint"
+    steps:
+      - # git checkout
+        name: "Checkout code"
+        uses: "actions/checkout@v3"
+      - # setup PHP
+        name: "Setup PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php-version }}"
+      - # check PHP version
+        name: "Check PHP version"
+        run: "php -v"
+      - # run lint
+        name: "Lint PHP files"
+        run: |
+          for file in $(find src/ -type f -name '*.php'); do
+            echo -n "==> ${file}: ";
+            php -l "${file}";
+          done
   build:
 
     runs-on: ubuntu-latest
+
+    name: "PHP composer & CodeSniffer"
 
     steps:
     - uses: actions/checkout@v3
