@@ -2,5 +2,6 @@
 .gitattributes  export-ignore
 .github			export-ignore
 .gitignore      export-ignore
+.phpcs.xml		export-ignore
 composer.*      export-ignore
 README.md       export-ignore

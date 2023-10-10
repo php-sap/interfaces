@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="PSR2" namespace="PHP-SAP\Standards">
+    <description>PHP/SAP PSR2 programming standard</description>
+    <!-- display progress -->
+    <arg value="p"/>
+    <arg value="n"/>
+    <!-- directories and files to check -->
+    <file>./src</file>
+    <!-- Use PSR2 as a standard -->
+    <rule ref="PSR2">
+    </rule>
+</ruleset>

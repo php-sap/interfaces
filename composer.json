@@ -28,5 +28,16 @@
     "psr-4": {
       "phpsap\\interfaces\\": "src/"
     }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs",
+    "phpcbf": "vendor/bin/phpcbf"
+  },
+  "scripts-descriptions": {
+    "phpcs": "Run PHP CodeSniffer validations.",
+    "phpcbf": "Fix errors found by PHP CodeSniffer."
   }
 }
