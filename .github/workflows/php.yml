@@ -10,14 +10,14 @@ permissions:
   contents: "read"
 jobs:
   # PHP lint for different PHP versions
-  lint:
+  build:
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
         php-version:
           - "7.4"
           - "8.1"
-    name: "PHP ${{ matrix.php-version }} lint"
+    name: "PHP ${{ matrix.php-version }}"
     steps:
       - # git checkout
         name: "git checkout"
@@ -37,17 +37,6 @@ jobs:
             echo -n "==> ${file}: ";
             php -l "${file}";
           done
-  # install composer packages and validate coding standards
-  build:
-    runs-on: ubuntu-latest
-    name: "PHP composer & CodeSniffer"
-    steps:
-      - # git checkout
-        name: "git checkout"
-        uses: "actions/checkout@v3"
-      - # Check PHP version
-        name: "Check PHP version"
-        run: "php -v"
       - # Validate composer.json and composer.lock
         name: "Validate composer.json and composer.lock"
         run: "composer validate --strict"
