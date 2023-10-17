@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace phpsap\interfaces\Config;
 
 use phpsap\interfaces\exceptions\IIncompleteConfigException;

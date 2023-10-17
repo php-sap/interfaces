@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace phpsap\interfaces\Api;
 
 use phpsap\interfaces\Util\IJsonSerializable;
