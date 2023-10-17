@@ -20,22 +20,22 @@ interface IConfigTypeA extends IConfigCommon
     /**
      * The host name of a specific SAP application server.
      */
-    const JSON_ASHOST = 'ashost';
+    public const JSON_ASHOST = 'ashost';
 
     /**
      * The SAP system number.
      */
-    const JSON_SYSNR = 'sysnr';
+    public const JSON_SYSNR = 'sysnr';
 
     /**
      * The gateway host on an application server.
      */
-    const JSON_GWHOST = 'gwhost';
+    public const JSON_GWHOST = 'gwhost';
 
     /**
      * The gateway server on an application server.
      */
-    const JSON_GWSERV = 'gwserv';
+    public const JSON_GWSERV = 'gwserv';
 
     /**
      * Get the hostname of a specific SAP application server.

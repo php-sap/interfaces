@@ -19,7 +19,7 @@ interface IArray extends IValue
     /**
      * JSON configuration key for members array.
      */
-    const JSON_MEMBERS = 'members';
+    public const JSON_MEMBERS = 'members';
 
     /**
      * Cast a given output value to the implemented value.

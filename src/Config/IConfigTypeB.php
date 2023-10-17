@@ -20,17 +20,17 @@ interface IConfigTypeB extends IConfigCommon
     /**
      * The host name of the message server.
      */
-    const JSON_MSHOST = 'mshost';
+    public const JSON_MSHOST = 'mshost';
 
     /**
      * The name of SAP system, optional; default: destination
      */
-    const JSON_R3NAME = 'r3name';
+    public const JSON_R3NAME = 'r3name';
 
     /**
      * The group name of the application servers.
      */
-    const JSON_GROUP = 'group';
+    public const JSON_GROUP = 'group';
 
 
     /**

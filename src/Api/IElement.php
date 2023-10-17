@@ -22,58 +22,58 @@ interface IElement extends IJsonSerializable
     /**
      * API element that casts to PHP string.
      */
-    const TYPE_STRING = 'string';
+    public const TYPE_STRING = 'string';
 
     /**
      * API element that casts to PHP int.
      */
-    const TYPE_INTEGER = 'int';
+    public const TYPE_INTEGER = 'int';
 
     /**
      * API element that casts to PHP bool.
      */
-    const TYPE_BOOLEAN = 'bool';
+    public const TYPE_BOOLEAN = 'bool';
 
     /**
      * API element that casts to PHP float.
      */
-    const TYPE_FLOAT = 'float';
+    public const TYPE_FLOAT = 'float';
 
     /**
      * API element that casts to a hexadecimal encoded binary to a binary.
      * (direction: output)
      */
-    const TYPE_HEXBIN = 'hexbin';
+    public const TYPE_HEXBIN = 'hexbin';
 
     /**
      * API date element that casts to a DateTime object.
      */
-    const TYPE_DATE = 'date';
+    public const TYPE_DATE = 'date';
 
     /**
      * API time element that casts to a DateTime object.
      */
-    const TYPE_TIME = 'time';
+    public const TYPE_TIME = 'time';
 
     /**
      * API virtual timestamp element (e.g. string) that casts to a DateTime object.
      */
-    const TYPE_TIMESTAMP = 'timestamp';
+    public const TYPE_TIMESTAMP = 'timestamp';
 
     /**
      * API virtual calendar week element (e.g. string) that casts to a DateTime object.
      */
-    const TYPE_WEEK = 'week';
+    public const TYPE_WEEK = 'week';
 
     /**
      * JSON configuration key for type value.
      */
-    const JSON_TYPE = 'type';
+    public const JSON_TYPE = 'type';
 
     /**
      * JSON configuration key for name value.
      */
-    const JSON_NAME = 'name';
+    public const JSON_NAME = 'name';
 
     /**
      * The PHP type of the element.

@@ -28,17 +28,17 @@ interface IFunction extends IJsonSerializable
     /**
      * JSON configuration key for the SAP remote function name.
      */
-    const JSON_NAME = 'name';
+    public const JSON_NAME = 'name';
 
     /**
      * JSON configuration key for the SAP remote function API.
      */
-    const JSON_API = 'api';
+    public const JSON_API = 'api';
 
     /**
      * JSON configuration key for the SAP remote function call parameters.
      */
-    const JSON_PARAM = 'params';
+    public const JSON_PARAM = 'params';
 
     /**
      * Initialize the remote function call with at least a name.

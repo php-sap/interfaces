@@ -16,5 +16,5 @@ interface IStruct extends IArray
     /**
      * API element that casts to an associative array in PHP.
      */
-    const TYPE_STRUCT = 'struct';
+    public const TYPE_STRUCT = 'struct';
 }

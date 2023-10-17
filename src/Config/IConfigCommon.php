@@ -20,49 +20,49 @@ interface IConfigCommon extends IConfiguration
     /**
      * Disable tracing.
      */
-    const TRACE_OFF = 0;
+    public const TRACE_OFF = 0;
 
     /**
      * Brief trace level.
      */
-    const TRACE_BRIEF = 1;
+    public const TRACE_BRIEF = 1;
 
     /**
      * Verbose trace level.
      */
-    const TRACE_VERBOSE = 2;
+    public const TRACE_VERBOSE = 2;
 
     /**
      * Full trace level.
      */
-    const TRACE_FULL = 3;
+    public const TRACE_FULL = 3;
 
     /**
      * The username to use for authentication.
      */
-    const JSON_USER = 'user';
+    public const JSON_USER = 'user';
 
     /**
      * The password to use for authentication.
      */
-    const JSON_PASSWD = 'passwd';
+    public const JSON_PASSWD = 'passwd';
 
     /**
      * The destination in RfcOpen.
      */
-    const JSON_CLIENT = 'client';
+    public const JSON_CLIENT = 'client';
 
     /**
      * If the connection needs to be made through a firewall using a SAPRouter,
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
      */
-    const JSON_SAPROUTER = 'saprouter';
+    public const JSON_SAPROUTER = 'saprouter';
 
     /**
      * The trace level (0-3). See constants TRACE_*.
      */
-    const JSON_TRACE = 'trace';
+    public const JSON_TRACE = 'trace';
 
     /**
      * Only needed it if you want to connect to a non-Unicode backend using a
@@ -70,17 +70,17 @@ interface IConfigCommon extends IConfiguration
      * codepage for the initial handshake, thus preserving the characters in
      * username/password.
      */
-    const JSON_CODEPAGE = 'codepage';
+    public const JSON_CODEPAGE = 'codepage';
 
     /**
      * The logon language.
      */
-    const JSON_LANG = 'lang';
+    public const JSON_LANG = 'lang';
 
     /**
      * The destination in RfcOpenConnection.
      */
-    const JSON_DEST = 'dest';
+    public const JSON_DEST = 'dest';
 
     /**
      * Get the username to use for authentication.

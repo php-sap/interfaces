@@ -16,10 +16,10 @@ interface ITable extends IArray
     /**
      * API table element.
      */
-    const DIRECTION_TABLE = 'table';
+    public const DIRECTION_TABLE = 'table';
 
     /**
      * API element that casts to a PHP array of associative arrays.
      */
-    const TYPE_TABLE = 'table';
+    public const TYPE_TABLE = 'table';
 }

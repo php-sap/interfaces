@@ -17,22 +17,22 @@ interface IValue extends IElement
     /**
      * API input element.
      */
-    const DIRECTION_INPUT = 'input';
+    public const DIRECTION_INPUT = 'input';
 
     /**
      * API output element.
      */
-    const DIRECTION_OUTPUT = 'output';
+    public const DIRECTION_OUTPUT = 'output';
 
     /**
      * JSON configuration key for direction value.
      */
-    const JSON_DIRECTION = 'direction';
+    public const JSON_DIRECTION = 'direction';
 
     /**
      * JSON configuration key for is optional flag.
      */
-    const JSON_OPTIONAL = 'optional';
+    public const JSON_OPTIONAL = 'optional';
 
     /**
      * Get the direction of the parameter.
