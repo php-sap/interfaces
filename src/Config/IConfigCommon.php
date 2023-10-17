@@ -91,11 +91,11 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the username to use for authentication.
-     * @param string $user The username.
+     * @param  string  $user The username.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setUser($user);
+    public function setUser(string $user);
 
     /**
      * Get the password to use for authentication.
@@ -106,11 +106,11 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the password to use for authentication.
-     * @param string $passwd The password.
+     * @param  string  $passwd The password.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setPasswd($passwd);
+    public function setPasswd(string $passwd);
 
     /**
      * Get the client.
@@ -121,11 +121,11 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the client.
-     * @param string $client The client.
+     * @param  string  $client The client.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setClient($client);
+    public function setClient(string $client);
 
     /**
      * Get the SAPRouter in case the connection needs to be made through a firewall.
@@ -137,11 +137,11 @@ interface IConfigCommon extends IConfiguration
      * In case the connection needs to be made through a firewall using a SAPRouter,
      * specify the SAPRouter parameters in the following format:
      * /H/hostname/S/portnumber/H/
-     * @param string $saprouter The saprouter.
+     * @param  string  $saprouter The saprouter.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setSaprouter($saprouter);
+    public function setSaprouter(string $saprouter);
 
     /**
      * Get the trace level. See constants TRACE_*.
@@ -151,11 +151,11 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the trace level. See constants TRACE_*.
-     * @param int $trace The trace level.
+     * @param  int  $trace The trace level.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setTrace($trace);
+    public function setTrace(int $trace);
 
     /**
      * Only needed it if you want to connect to a non-Unicode backend using a
@@ -171,11 +171,11 @@ interface IConfigCommon extends IConfiguration
      * non-ISO-Latin-1 user name or password. The RFC library will then use that
      * codepage for the initial handshake, thus preserving the characters in
      * username/password.
-     * @param int $codepage The codepage.
+     * @param  int  $codepage The codepage.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setCodepage($codepage);
+    public function setCodepage(int $codepage);
 
     /**
      * Get the logon Language.
@@ -185,11 +185,11 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the logon language.
-     * @param string $lang The logon language.
+     * @param  string  $lang The logon language.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setLang($lang);
+    public function setLang(string $lang);
 
     /**
      * Get the destination in RfcOpenConnection.
@@ -199,9 +199,9 @@ interface IConfigCommon extends IConfiguration
 
     /**
      * Set the destination in RfcOpenConnection.
-     * @param string $dest The destination in RfcOpenConnection.
+     * @param  string  $dest The destination in RfcOpenConnection.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setDest($dest);
+    public function setDest(string $dest);
 }

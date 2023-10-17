@@ -46,11 +46,11 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Set the hostname of a specific SAP application server.
-     * @param string $ashost The hostname of a specific SAP application server.
+     * @param  string  $ashost The hostname of a specific SAP application server.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setAshost($ashost);
+    public function setAshost(string $ashost);
 
     /**
      * Get the SAP system number.
@@ -61,11 +61,11 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Set the SAP system number.
-     * @param string $sysnr The SAP system number.
+     * @param  string  $sysnr The SAP system number.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setSysnr($sysnr);
+    public function setSysnr(string $sysnr);
 
     /**
      * Get the gateway host on the application server.
@@ -75,11 +75,11 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Set the gateway host on the application server.
-     * @param string $gwhost The gateway host.
+     * @param  string  $gwhost The gateway host.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setGwhost($gwhost);
+    public function setGwhost(string $gwhost);
 
     /**
      * Get the gateway service on the application server.
@@ -89,9 +89,9 @@ interface IConfigTypeA extends IConfigCommon
 
     /**
      * Set the gateway service on the application server.
-     * @param string $gwserv The gateway service on the application server.
+     * @param  string  $gwserv The gateway service on the application server.
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setGwserv($gwserv);
+    public function setGwserv(string $gwserv);
 }

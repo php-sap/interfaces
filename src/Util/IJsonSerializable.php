@@ -18,9 +18,9 @@ interface IJsonSerializable extends JsonSerializable
 {
     /**
      * Decode a formerly JSON encoded object.
-     * @param string $json JSON encoded object.
+     * @param  string  $json JSON encoded object.
      * @return IJsonSerializable
      * @throws IInvalidArgumentException
      */
-    public static function jsonDecode($json);
+    public static function jsonDecode(string $json);
 }
