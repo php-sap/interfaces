@@ -39,11 +39,11 @@ interface IValue extends IElement
      * interface.
      * @return string
      */
-    public function getDirection();
+    public function getDirection(): string;
 
     /**
      * Is the element optional?
      * @return bool
      */
-    public function isOptional();
+    public function isOptional(): bool;
 }

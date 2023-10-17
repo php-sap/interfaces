@@ -22,23 +22,23 @@ interface IApi extends IJsonSerializable
      * @param  IValue  $value
      * @return $this
      */
-    public function add(IValue $value);
+    public function add(IValue $value): IApi;
 
     /**
      * Get all input values of the remote function.
      * @return IValue[]
      */
-    public function getInputValues();
+    public function getInputValues(): array;
 
     /**
      * Get all output values of the remote function.
      * @return IValue[]
      */
-    public function getOutputValues();
+    public function getOutputValues(): array;
 
     /**
      * Get all tables of the remote function.
      * @return ITable[]
      */
-    public function getTables();
+    public function getTables(): array;
 }

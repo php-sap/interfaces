@@ -42,7 +42,7 @@ interface IConfigTypeA extends IConfigCommon
      * @return string The hostname of a specific SAP application server.
      * @throws IIncompleteConfigException
      */
-    public function getAshost();
+    public function getAshost(): string;
 
     /**
      * Set the hostname of a specific SAP application server.
@@ -50,14 +50,14 @@ interface IConfigTypeA extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setAshost(string $ashost);
+    public function setAshost(string $ashost): IConfigTypeA;
 
     /**
      * Get the SAP system number.
      * @return string The SAP system number.
      * @throws IIncompleteConfigException
      */
-    public function getSysnr();
+    public function getSysnr(): string;
 
     /**
      * Set the SAP system number.
@@ -65,13 +65,13 @@ interface IConfigTypeA extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setSysnr(string $sysnr);
+    public function setSysnr(string $sysnr): IConfigTypeA;
 
     /**
      * Get the gateway host on the application server.
      * @return string|null The gateway host or NULL in case no gateway host has been defined.
      */
-    public function getGwhost();
+    public function getGwhost(): ?string;
 
     /**
      * Set the gateway host on the application server.
@@ -79,13 +79,13 @@ interface IConfigTypeA extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setGwhost(string $gwhost);
+    public function setGwhost(string $gwhost): IConfigTypeA;
 
     /**
      * Get the gateway service on the application server.
      * @return string|null The gateway service or NULL in case no gateway service has been defined.
      */
-    public function getGwserv();
+    public function getGwserv(): ?string;
 
     /**
      * Set the gateway service on the application server.
@@ -93,5 +93,5 @@ interface IConfigTypeA extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setGwserv(string $gwserv);
+    public function setGwserv(string $gwserv): IConfigTypeA;
 }

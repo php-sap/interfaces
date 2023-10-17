@@ -38,7 +38,7 @@ interface IConfigTypeB extends IConfigCommon
      * @return string
      * @throws IIncompleteConfigException
      */
-    public function getMshost();
+    public function getMshost(): string;
 
     /**
      * Set the host name of the message server.
@@ -46,13 +46,13 @@ interface IConfigTypeB extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setMshost(string $mshost);
+    public function setMshost(string $mshost): IConfigTypeB;
 
     /**
      * Get the name of SAP system, optional; default: destination
      * @return string|null The name of the SAP system or NULL in case no name has been defined.
      */
-    public function getR3name();
+    public function getR3name(): ?string;
 
     /**
      * Set the name of SAP system, optional; default: destination
@@ -60,13 +60,13 @@ interface IConfigTypeB extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setR3name(string $r3name);
+    public function setR3name(string $r3name): IConfigTypeB;
 
     /**
      * Get the group name of the application servers, optional; default: PUBLIC.
      * @return string|null The name of the group  or NULL in case no group has been defined.
      */
-    public function getGroup();
+    public function getGroup(): ?string;
 
     /**
      * Set the group name of the application servers, optional; default: PUBLIC.
@@ -74,5 +74,5 @@ interface IConfigTypeB extends IConfigCommon
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setGroup(string $group);
+    public function setGroup(string $group): IConfigTypeB;
 }

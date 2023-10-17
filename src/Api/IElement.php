@@ -79,13 +79,13 @@ interface IElement extends IJsonSerializable
      * The PHP type of the element.
      * @return string
      */
-    public function getType();
+    public function getType(): string;
 
     /**
      * The name of the element.
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Cast a given output value to the implemented value.

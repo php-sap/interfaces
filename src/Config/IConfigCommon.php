@@ -87,7 +87,7 @@ interface IConfigCommon extends IConfiguration
      * @return string The username.
      * @throws IIncompleteConfigException
      */
-    public function getUser();
+    public function getUser(): string;
 
     /**
      * Set the username to use for authentication.
@@ -95,14 +95,14 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setUser(string $user);
+    public function setUser(string $user): IConfigCommon;
 
     /**
      * Get the password to use for authentication.
      * @return string The password.
      * @throws IIncompleteConfigException
      */
-    public function getPasswd();
+    public function getPasswd(): string;
 
     /**
      * Set the password to use for authentication.
@@ -110,14 +110,14 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setPasswd(string $passwd);
+    public function setPasswd(string $passwd): IConfigCommon;
 
     /**
      * Get the client.
      * @return string The client
      * @throws IIncompleteConfigException
      */
-    public function getClient();
+    public function getClient(): string;
 
     /**
      * Set the client.
@@ -125,13 +125,13 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setClient(string $client);
+    public function setClient(string $client): IConfigCommon;
 
     /**
      * Get the SAPRouter in case the connection needs to be made through a firewall.
      * @return string|null The saprouter or NULL in case the saprouter hasn't been set.
      */
-    public function getSaprouter();
+    public function getSaprouter(): ?string;
 
     /**
      * In case the connection needs to be made through a firewall using a SAPRouter,
@@ -141,13 +141,13 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setSaprouter(string $saprouter);
+    public function setSaprouter(string $saprouter): IConfigCommon;
 
     /**
      * Get the trace level. See constants TRACE_*.
      * @return int|null The trace level or NULL in case the trace level hasn't been set.
      */
-    public function getTrace();
+    public function getTrace(): ?int;
 
     /**
      * Set the trace level. See constants TRACE_*.
@@ -155,7 +155,7 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setTrace(int $trace);
+    public function setTrace(int $trace): IConfigCommon;
 
     /**
      * Only needed it if you want to connect to a non-Unicode backend using a
@@ -164,7 +164,7 @@ interface IConfigCommon extends IConfiguration
      * username/password.
      * @return int|null The codepage or NULL in case the codepage hasn't been set.
      */
-    public function getCodepage();
+    public function getCodepage(): ?int;
 
     /**
      * Only needed it if you want to connect to a non-Unicode backend using a
@@ -175,13 +175,13 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setCodepage(int $codepage);
+    public function setCodepage(int $codepage): IConfigCommon;
 
     /**
      * Get the logon Language.
      * @return string|null The logon language or NULL in case the logon language hasn't been set.
      */
-    public function getLang();
+    public function getLang(): ?string;
 
     /**
      * Set the logon language.
@@ -189,13 +189,13 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setLang(string $lang);
+    public function setLang(string $lang): IConfigCommon;
 
     /**
      * Get the destination in RfcOpenConnection.
      * @return string|null The destination or NULL in case the destination hasn't been set.
      */
-    public function getDest();
+    public function getDest(): ?string;
 
     /**
      * Set the destination in RfcOpenConnection.
@@ -203,5 +203,5 @@ interface IConfigCommon extends IConfiguration
      * @return $this
      * @throws IInvalidArgumentException
      */
-    public function setDest(string $dest);
+    public function setDest(string $dest): IConfigCommon;
 }

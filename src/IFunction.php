@@ -64,7 +64,7 @@ interface IFunction extends IJsonSerializable
      * Get the SAP remote function name.
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Get the SAP connection configuration for this remote function.
@@ -73,7 +73,7 @@ interface IFunction extends IJsonSerializable
      *
      * @return IConfiguration|null
      */
-    public function getConfiguration();
+    public function getConfiguration(): ?IConfiguration;
 
     /**
      * Set the SAP connection configuration for this remote function.
@@ -84,7 +84,7 @@ interface IFunction extends IJsonSerializable
      * @param  IConfiguration  $config
      * @return $this
      */
-    public function setConfiguration(IConfiguration $config);
+    public function setConfiguration(IConfiguration $config): IFunction;
 
     /**
      * Connect to the SAP remote system and extract the API of the SAP remote
@@ -103,7 +103,7 @@ interface IFunction extends IJsonSerializable
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
      */
-    public function extractApi();
+    public function extractApi(): IApi;
 
     /**
      * Get the remote function API.
@@ -120,7 +120,7 @@ interface IFunction extends IJsonSerializable
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
      */
-    public function getApi();
+    public function getApi(): IApi;
 
     /**
      * Set the SAP remote function API (e.g. from cache).
@@ -132,14 +132,14 @@ interface IFunction extends IJsonSerializable
      * @param  IApi  $api
      * @return $this
      */
-    public function setApi(IApi $api);
+    public function setApi(IApi $api): IFunction;
 
     /**
      * Returns all previously set parameters.
      *
      * @return array Associative array of all parameters that have been set.
      */
-    public function getParams();
+    public function getParams(): array;
 
     /**
      * Extract all expected SAP remote function call parameters from the given array
@@ -157,7 +157,7 @@ interface IFunction extends IJsonSerializable
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
      */
-    public function setParams(array $params);
+    public function setParams(array $params): IFunction;
 
     /**
      * Remove all SAP remote function call parameters that have been set before
@@ -165,7 +165,7 @@ interface IFunction extends IJsonSerializable
      *
      * @return $this
      */
-    public function resetParams();
+    public function resetParams(): IFunction;
 
     /**
      * Invoke the SAP remote function call.
@@ -179,5 +179,5 @@ interface IFunction extends IJsonSerializable
      * @throws IUnknownFunctionException
      * @throws IFunctionCallException
      */
-    public function invoke();
+    public function invoke(): array;
 }

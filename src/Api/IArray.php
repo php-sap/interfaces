@@ -28,11 +28,11 @@ interface IArray extends IValue
      * @throws IArrayElementMissingException
      * @throws IInvalidArgumentException
      */
-    public function cast($value);
+    public function cast($value): array;
 
     /**
      * Return an array of member elements.
      * @return IElement[]
      */
-    public function getMembers();
+    public function getMembers(): array;
 }

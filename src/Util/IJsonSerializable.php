@@ -22,5 +22,5 @@ interface IJsonSerializable extends JsonSerializable
      * @return IJsonSerializable
      * @throws IInvalidArgumentException
      */
-    public static function jsonDecode(string $json);
+    public static function jsonDecode(string $json): IJsonSerializable;
 }
