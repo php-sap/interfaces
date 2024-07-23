@@ -128,7 +128,7 @@ interface IFunction extends IJsonSerializable
      * Set the SAP remote function API (e.g. from cache).
      *
      * By setting the API, it will not be queried from the SAP remote system when
-     * calling getApi(). Instead getApi() will return whatever has been set using
+     * calling getApi(). Instead, getApi() will return whatever has been set using
      * this method.
      *
      * @param  IApi  $api
