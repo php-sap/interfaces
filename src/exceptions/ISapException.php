@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace phpsap\interfaces\exceptions;
 
+use Throwable;
+
 /**
  * Class ISapException
  *
@@ -13,6 +15,6 @@ namespace phpsap\interfaces\exceptions;
  * @author  Gregor J.
  * @license MIT
  */
-interface ISapException
+interface ISapException extends Throwable
 {
 }
