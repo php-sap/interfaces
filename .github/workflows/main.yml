@@ -45,3 +45,10 @@ jobs:
         run: "php -l src/ tests/"
       - name: "install composer dependencies"
         run: "composer install --prefer-dist --no-progress"
+      # PHPStan
+      - name: "PHPStan static analysis"
+        uses: "php-actions/phpstan@v3"
+        with:
+          php_version: "${{ matrix.php-version }}"
+          configuration: "phpstan.neon"
+          path: "src/ tests/"
