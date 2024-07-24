@@ -51,10 +51,10 @@ interface IFunction extends IJsonSerializable
      * connect to the SAP remote system, a SAP connection configuration needs to be
      * present.
      *
-     * @param  string  $name   SAP remote function name.
-     * @param array|null                                    $params SAP remote function call parameters. Default: null
-     * @param  IConfiguration|null $config SAP connection configuration. Default: null
-     * @param  IApi|null              $api    SAP remote function call API. Default: null
+     * @param  string                    $name   SAP remote function name.
+     * @param  array<string, mixed>|null $params SAP remote function call parameters. Default: null
+     * @param  IConfiguration|null       $config SAP connection configuration. Default: null
+     * @param  IApi|null                 $api    SAP remote function call API. Default: null
      * @throws IInvalidArgumentException
      * @throws IIncompleteConfigException
      * @throws IConnectionFailedException
@@ -139,7 +139,7 @@ interface IFunction extends IJsonSerializable
     /**
      * Returns all previously set parameters.
      *
-     * @return array Associative array of all parameters that have been set.
+     * @return array<string, mixed> Associative array of all parameters that have been set.
      */
     public function getParams(): array;
 
@@ -152,7 +152,7 @@ interface IFunction extends IJsonSerializable
      * connection configuration for this remote function needs to be set using
      * setConfiguration().
      *
-     * @param array $params An array of SAP remote function call parameters.
+     * @param array<string, mixed> $params An array of SAP remote function call parameters.
      * @return $this
      * @throws IInvalidArgumentException
      * @throws IIncompleteConfigException
@@ -175,7 +175,7 @@ interface IFunction extends IJsonSerializable
      * A SAP connection configuration needs to be present for a remote function
      * call. Use setConfiguration() to set the connection configuration.
      *
-     * @return array
+     * @return array<string, mixed>
      * @throws IIncompleteConfigException
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
