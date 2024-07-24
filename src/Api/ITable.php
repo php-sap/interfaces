@@ -7,7 +7,8 @@ namespace phpsap\interfaces\Api;
 /**
  * Interface ITable
  *
- * API extend the logic of arrays but contains rows of member elements.
+ * API tables extend the logic of arrays to contain an array of associative
+ * arrays.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.

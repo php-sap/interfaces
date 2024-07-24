@@ -7,7 +7,7 @@ namespace phpsap\interfaces\Api;
 /**
  * Interface IStruct
  *
- * API extend the logic of arrays to contain member elements.
+ * API structs extend the logic of arrays to contain an associative array.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.

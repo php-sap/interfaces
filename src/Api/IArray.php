@@ -10,13 +10,14 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
 /**
  * Interface IArray
  *
- * API extend the logic of values to contain member elements.
+ * API arrays extend the logic of elements to contain member elements. They are
+ * the basis for structs and tables.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
  * @license MIT
  */
-interface IArray extends IValue
+interface IArray extends IElement
 {
     /**
      * JSON configuration key for members array.
@@ -25,12 +26,12 @@ interface IArray extends IValue
 
     /**
      * Cast a given output value to the implemented value.
-     * @param array $value The output array to typecast.
-     * @return array
+     * @param array<int|string, mixed> $value The output array to typecast.
+     * @return array<int|string, mixed>
      * @throws IArrayElementMissingException
      * @throws IInvalidArgumentException
      */
-    public function cast($value): array;
+    public function cast(array $value): array;
 
     /**
      * Return an array of member elements.
