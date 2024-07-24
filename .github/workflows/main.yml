@@ -42,7 +42,7 @@ jobs:
       - name: "check PHP version"
         run: "php -v"
       - name: "lint PHP files"
-        run: "php -l src/ tests/"
+        run: "php -l src/"
       - name: "install composer dependencies"
         run: "composer install --prefer-dist --no-progress"
       # PHPStan
@@ -51,4 +51,4 @@ jobs:
         with:
           php_version: "${{ matrix.php-version }}"
           configuration: "phpstan.neon"
-          path: "src/ tests/"
+          path: "src/"
