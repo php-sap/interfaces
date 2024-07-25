@@ -61,7 +61,7 @@ interface IStruct extends IJsonSerializable
 
     /**
      * Initialize this class from an array.
-     * @param  array<string, string|bool|array<string, string>>  $array  Array containing the properties of this class.
+     * @param  array<string, string|bool|array<int, array<string, string>>> $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
      */
     public function __construct(array $array);
