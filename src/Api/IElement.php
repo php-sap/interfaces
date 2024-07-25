@@ -12,9 +12,8 @@ use phpsap\interfaces\Util\IJsonSerializable;
 /**
  * Interface IElement
  *
- * API elements build the basis for API values, structs and tables. They have a
- * name, a type, a direction and an optional flag. However, they don't contain
- * any values.
+ * API elements are struct or table members and have no direction or optional flag
+ * of their own.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
@@ -22,6 +21,52 @@ use phpsap\interfaces\Util\IJsonSerializable;
  */
 interface IElement extends IJsonSerializable
 {
+    /**
+     * API element that casts to PHP string.
+     */
+    public const TYPE_STRING = 'string';
+
+    /**
+     * API element that casts to PHP int.
+     */
+    public const TYPE_INTEGER = 'int';
+
+    /**
+     * API element that casts to PHP bool.
+     */
+    public const TYPE_BOOLEAN = 'bool';
+
+    /**
+     * API element that casts to PHP float.
+     */
+    public const TYPE_FLOAT = 'float';
+
+    /**
+     * API element that casts to a hexadecimal encoded binary to a binary.
+     * (direction: output)
+     */
+    public const TYPE_HEXBIN = 'hexbin';
+
+    /**
+     * API date element that casts to a DateTime object.
+     */
+    public const TYPE_DATE = 'date';
+
+    /**
+     * API time element that casts to a DateTime object.
+     */
+    public const TYPE_TIME = 'time';
+
+    /**
+     * API virtual timestamp element (e.g. string) that casts to a DateTime object.
+     */
+    public const TYPE_TIMESTAMP = 'timestamp';
+
+    /**
+     * API virtual calendar week element (e.g. string) that casts to a DateTime object.
+     */
+    public const TYPE_WEEK = 'week';
+
     /**
      * JSON configuration key for type value.
      */
@@ -31,26 +76,6 @@ interface IElement extends IJsonSerializable
      * JSON configuration key for name value.
      */
     public const JSON_NAME = 'name';
-
-    /**
-     * API input element.
-     */
-    public const DIRECTION_INPUT = 'input';
-
-    /**
-     * API output element.
-     */
-    public const DIRECTION_OUTPUT = 'output';
-
-    /**
-     * JSON configuration key for direction value.
-     */
-    public const JSON_DIRECTION = 'direction';
-
-    /**
-     * JSON configuration key for is optional flag.
-     */
-    public const JSON_OPTIONAL = 'optional';
 
     /**
      * The PHP type of the element.
@@ -65,15 +90,10 @@ interface IElement extends IJsonSerializable
     public function getName(): string;
 
     /**
-     * Get the direction of the parameter.
-     * interface.
-     * @return string
+     * Cast a given output value to the implemented value.
+     * @param bool|int|float|string $value The output to typecast.
+     * @return bool|int|float|string|SapDateTime|SapDateInterval
+     * @throws IInvalidArgumentException
      */
-    public function getDirection(): string;
-
-    /**
-     * Is the element optional?
-     * @return bool
-     */
-    public function isOptional(): bool;
+    public function cast($value);
 }
