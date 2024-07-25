@@ -60,22 +60,22 @@ interface IStruct extends IJsonSerializable
     public const JSON_MEMBERS = 'members';
 
     /**
-     * Table constructor.
-     * @param  string     $name        API struct name.
-     * @param  string     $direction   Either input or output
-     * @param  bool       $isOptional  Is the API struct optional?
-     * @param  IMember[]  $members     Array of members of the struct.
+     * Initialize this class from an array.
+     * @param  array<string, string|bool|array<string, string>>  $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
      */
-    public function __construct(string $name, string $direction, bool $isOptional, array $members);
+    public function __construct(array $array);
 
     /**
-     * Create an instance of this class from an array.
-     * @param  array<string, string|bool|array<string, string>>  $array  Array containing the properties of this class.
+     * Create an instance of this class.
+     * @param  string  $name  API struct name.
+     * @param  string  $direction  Either input or output
+     * @param  bool  $isOptional  Is the API struct optional?
+     * @param  IMember[]  $members  Array of members of the struct.
      * @return IStruct
      * @throws IInvalidArgumentException
      */
-    public static function create(array $array): IStruct;
+    public static function create(string $name, string $direction, bool $isOptional, array $members): IStruct;
 
     /**
      * The PHP type of the element.

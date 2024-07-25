@@ -97,22 +97,22 @@ interface IValue extends IJsonSerializable
     public const JSON_OPTIONAL = 'optional';
 
     /**
-     * API value constructor.
-     * @param string $type Either bool or in or float or ...
-     * @param string $name API value name.
-     * @param string $direction Either input or output.
-     * @param bool $isOptional Is the API value optional?
+     * Initialize this class from an array.
+     * @param  array<string, string|bool>  $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
      */
-    public function __construct(string $type, string $name, string $direction, bool $isOptional);
+    public function __construct(array $array);
 
     /**
-     * Create an instance of this class from an array.
-     * @param  array<string, string|bool>  $array  Array containing the properties of this class.
+     * Create an instance of this class.
+     * @param  string  $type  Either bool or in or float or ...
+     * @param  string  $name  API value name.
+     * @param  string  $direction  Either input or output.
+     * @param  bool  $isOptional  Is the API value optional?
      * @return IValue
      * @throws IInvalidArgumentException
      */
-    public static function create(array $array): IValue;
+    public static function create(string $type, string $name, string $direction, bool $isOptional): IValue;
 
     /**
      * The PHP type of the element.

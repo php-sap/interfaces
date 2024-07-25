@@ -77,20 +77,20 @@ interface IMember extends IJsonSerializable
     public const JSON_NAME = 'name';
 
     /**
-     * API member constructor.
-     * @param string $type Either bool or in or float or ...
-     * @param string $name API struct or table member name.
+     * Initialize this class from an array.
+     * @param  array<string, string>  $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
      */
-    public function __construct(string $type, string $name);
+    public function __construct(array $array);
 
     /**
-     * Create an instance of this class from an array.
-     * @param  array<string, string>  $array  Array containing the properties of this class.
+     * Create an instance of this class.
+     * @param  string  $type  Member type. Use TYPE_* constants.
+     * @param  string  $name  API struct or table member name.
      * @return IMember
      * @throws IInvalidArgumentException
      */
-    public static function create(array $array): IMember;
+    public static function create(string $type, string $name): IMember;
 
     /**
      * The PHP type of the element.

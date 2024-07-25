@@ -65,22 +65,22 @@ interface ITable extends IJsonSerializable
     public const JSON_MEMBERS = 'members';
 
     /**
-     * Table constructor.
-     * @param  string     $name        API table name.
-     * @param  string     $direction   Either input or output or table
-     * @param  bool       $isOptional  Is the API table optional?
-     * @param  IMember[]  $members     Array of members as columns of the table.
+     * Initialize this class from an array.
+     * @param  array<string, string|bool|array<string, string>>  $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
      */
-    public function __construct(string $name, string $direction, bool $isOptional, array $members);
+    public function __construct(array $array);
 
     /**
-     * Create an instance of this class from an array.
-     * @param  array<string, string|bool|array<string, string>>  $array  Array containing the properties of this class.
+     * Create an instance of this class.
+     * @param  string  $name  API table name.
+     * @param  string  $direction  Either input or output or table
+     * @param  bool  $isOptional  Is the API table optional?
+     * @param  IMember[]  $members  Array of members as columns of the table.
      * @return ITable
      * @throws IInvalidArgumentException
      */
-    public static function create(array $array): ITable;
+    public static function create(string $name, string $direction, bool $isOptional, array $members): ITable;
 
     /**
      * The PHP type of the element.
