@@ -10,21 +10,20 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
 use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
- * Interface IElement
+ * Interface IMember
  *
- * API elements are struct or table members and have no direction or optional flag
- * of their own.
+ * API struct or table member.
  *
  * @package phpsap\interfaces\Api
  * @author  Gregor J.
  * @license MIT
  */
-interface IElement extends IJsonSerializable
+interface IMember extends IJsonSerializable
 {
     /**
-     * API element that casts to PHP string.
+     * API element that casts to PHP bool.
      */
-    public const TYPE_STRING = 'string';
+    public const TYPE_BOOLEAN = 'bool';
 
     /**
      * API element that casts to PHP int.
@@ -32,14 +31,14 @@ interface IElement extends IJsonSerializable
     public const TYPE_INTEGER = 'int';
 
     /**
-     * API element that casts to PHP bool.
-     */
-    public const TYPE_BOOLEAN = 'bool';
-
-    /**
      * API element that casts to PHP float.
      */
     public const TYPE_FLOAT = 'float';
+
+    /**
+     * API element that casts to PHP string.
+     */
+    public const TYPE_STRING = 'string';
 
     /**
      * API element that casts to a hexadecimal encoded binary to a binary.
@@ -78,6 +77,22 @@ interface IElement extends IJsonSerializable
     public const JSON_NAME = 'name';
 
     /**
+     * API member constructor.
+     * @param string $type Either bool or in or float or ...
+     * @param string $name API struct or table member name.
+     * @throws IInvalidArgumentException
+     */
+    public function __construct(string $type, string $name);
+
+    /**
+     * Create an instance of this class from an array.
+     * @param  array<string, string>  $array  Array containing the properties of this class.
+     * @return IMember
+     * @throws IInvalidArgumentException
+     */
+    public static function create(array $array): IMember;
+
+    /**
      * The PHP type of the element.
      * @return string
      */
@@ -90,10 +105,10 @@ interface IElement extends IJsonSerializable
     public function getName(): string;
 
     /**
-     * Cast a given output value to the implemented value.
-     * @param bool|int|float|string $value The output to typecast.
+     * Cast a value according to this class.
+     * @param  float|bool|int|string  $value The output to typecast.
      * @return bool|int|float|string|SapDateTime|SapDateInterval
      * @throws IInvalidArgumentException
      */
-    public function cast($value);
+    public function cast(bool|int|float|string $value): bool|int|float|string|SapDateTime|SapDateInterval;
 }
