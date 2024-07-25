@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace phpsap\interfaces\Api;
 
-use phpsap\DateTime\SapDateInterval;
-use phpsap\DateTime\SapDateTime;
+use DateInterval;
+use DateTime;
 use phpsap\interfaces\exceptions\IInvalidArgumentException;
 use phpsap\interfaces\Util\IJsonSerializable;
 
@@ -107,8 +107,8 @@ interface IMember extends IJsonSerializable
     /**
      * Cast a value according to this class.
      * @param  float|bool|int|string  $value  The output to typecast.
-     * @return null|bool|int|float|string|SapDateTime|SapDateInterval
+     * @return null|bool|int|float|string|DateTime|DateInterval
      * @throws IInvalidArgumentException
      */
-    public function cast(null|bool|int|float|string $value): null|bool|int|float|string|SapDateTime|SapDateInterval;
+    public function cast(null|bool|int|float|string $value): null|bool|int|float|string|DateTime|DateInterval;
 }
