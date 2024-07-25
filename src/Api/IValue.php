@@ -142,8 +142,8 @@ interface IValue extends IJsonSerializable
     /**
      * Cast a given value according to this class.
      * @param  float|bool|int|string  $value The value to typecast.
-     * @return bool|int|float|string|SapDateTime|SapDateInterval
+     * @return null|bool|int|float|string|SapDateTime|SapDateInterval
      * @throws IInvalidArgumentException
      */
-    public function cast(bool|int|float|string $value): bool|int|float|string|SapDateTime|SapDateInterval;
+    public function cast(null|bool|int|float|string $value): null|bool|int|float|string|SapDateTime|SapDateInterval;
 }

@@ -106,9 +106,9 @@ interface IMember extends IJsonSerializable
 
     /**
      * Cast a value according to this class.
-     * @param  float|bool|int|string  $value The output to typecast.
-     * @return bool|int|float|string|SapDateTime|SapDateInterval
+     * @param  float|bool|int|string  $value  The output to typecast.
+     * @return null|bool|int|float|string|SapDateTime|SapDateInterval
      * @throws IInvalidArgumentException
      */
-    public function cast(bool|int|float|string $value): bool|int|float|string|SapDateTime|SapDateInterval;
+    public function cast(null|bool|int|float|string $value): null|bool|int|float|string|SapDateTime|SapDateInterval;
 }
