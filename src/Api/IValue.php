@@ -7,7 +7,6 @@ namespace phpsap\interfaces\Api;
 use DateInterval;
 use DateTime;
 use phpsap\interfaces\exceptions\IInvalidArgumentException;
-use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
  * Interface IValue
@@ -18,7 +17,7 @@ use phpsap\interfaces\Util\IJsonSerializable;
  * @author  Gregor J.
  * @license MIT
  */
-interface IValue extends IJsonSerializable
+interface IValue extends IApiElement
 {
     /**
      * API element that casts to PHP bool.
@@ -67,36 +66,6 @@ interface IValue extends IJsonSerializable
     public const TYPE_WEEK = 'week';
 
     /**
-     * API input element.
-     */
-    public const DIRECTION_INPUT = 'input';
-
-    /**
-     * API output element.
-     */
-    public const DIRECTION_OUTPUT = 'output';
-
-    /**
-     * JSON configuration key for type value.
-     */
-    public const JSON_TYPE = 'type';
-
-    /**
-     * JSON configuration key for name value.
-     */
-    public const JSON_NAME = 'name';
-
-    /**
-     * JSON configuration key for direction value.
-     */
-    public const JSON_DIRECTION = 'direction';
-
-    /**
-     * JSON configuration key for is optional flag.
-     */
-    public const JSON_OPTIONAL = 'optional';
-
-    /**
      * Initialize this class from an array.
      * @param  array<string, string|bool>  $array  Array containing the properties of this class.
      * @throws IInvalidArgumentException
@@ -113,31 +82,6 @@ interface IValue extends IJsonSerializable
      * @throws IInvalidArgumentException
      */
     public static function create(string $type, string $name, string $direction, bool $isOptional): IValue;
-
-    /**
-     * The PHP type of the element.
-     * @return string
-     */
-    public function getType(): string;
-
-    /**
-     * The name of the element.
-     * @return string
-     */
-    public function getName(): string;
-
-    /**
-     * Get the direction of the parameter.
-     * interface.
-     * @return string
-     */
-    public function getDirection(): string;
-
-    /**
-     * Is the element optional?
-     * @return bool
-     */
-    public function isOptional(): bool;
 
     /**
      * Cast a given value according to this class.

@@ -6,7 +6,6 @@ namespace phpsap\interfaces\Api;
 
 use phpsap\interfaces\exceptions\IArrayElementMissingException;
 use phpsap\interfaces\exceptions\IInvalidArgumentException;
-use phpsap\interfaces\Util\IJsonSerializable;
 
 /**
  * Interface IStruct
@@ -17,42 +16,12 @@ use phpsap\interfaces\Util\IJsonSerializable;
  * @author  Gregor J.
  * @license MIT
  */
-interface IStruct extends IJsonSerializable
+interface IStruct extends IApiElement
 {
     /**
      * API element that casts to an associative array in PHP.
      */
     public const TYPE_STRUCT = 'struct';
-
-    /**
-     * API input element.
-     */
-    public const DIRECTION_INPUT = 'input';
-
-    /**
-     * API output element.
-     */
-    public const DIRECTION_OUTPUT = 'output';
-
-    /**
-     * JSON configuration key for type value.
-     */
-    public const JSON_TYPE = 'type';
-
-    /**
-     * JSON configuration key for name value.
-     */
-    public const JSON_NAME = 'name';
-
-    /**
-     * JSON configuration key for direction value.
-     */
-    public const JSON_DIRECTION = 'direction';
-
-    /**
-     * JSON configuration key for is optional flag.
-     */
-    public const JSON_OPTIONAL = 'optional';
 
     /**
      * JSON configuration key for members array.
@@ -76,31 +45,6 @@ interface IStruct extends IJsonSerializable
      * @throws IInvalidArgumentException
      */
     public static function create(string $name, string $direction, bool $isOptional, array $members): IStruct;
-
-    /**
-     * The PHP type of the element.
-     * @return string
-     */
-    public function getType(): string;
-
-    /**
-     * The name of the element.
-     * @return string
-     */
-    public function getName(): string;
-
-    /**
-     * Get the direction of the parameter.
-     * interface.
-     * @return string
-     */
-    public function getDirection(): string;
-
-    /**
-     * Is the element optional?
-     * @return bool
-     */
-    public function isOptional(): bool;
 
     /**
      * Returns an array of members.
