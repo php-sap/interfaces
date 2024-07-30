@@ -17,7 +17,7 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * @author  Gregor J.
  * @license MIT
  */
-interface IConfigTypeA extends IConfigCommon
+interface IConfigTypeA extends IConfiguration
 {
     /**
      * The host name of a specific SAP application server.

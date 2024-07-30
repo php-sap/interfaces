@@ -17,7 +17,7 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * @author  Gregor J.
  * @license MIT
  */
-interface IConfigTypeB extends IConfigCommon
+interface IConfigTypeB extends IConfiguration
 {
     /**
      * The host name of the message server.
