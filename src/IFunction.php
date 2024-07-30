@@ -43,7 +43,13 @@ interface IFunction extends IJsonSerializable
     public const JSON_PARAM = 'params';
 
     /**
-     * Initialize the remote function call with at least a name.
+     * Restore a remote function call from an array.
+     * @param  array<string, string|IApi|array<string, mixed>>  $array
+     */
+    public function __construct(array $array);
+
+    /**
+     * Create a remote function call with at least a name.
      *
      * In order to add SAP remote function call parameters, an API needs to be
      * present. In case no SAP remote function call API has been defined, it will be
@@ -51,16 +57,16 @@ interface IFunction extends IJsonSerializable
      * connect to the SAP remote system, a SAP connection configuration needs to be
      * present.
      *
-     * @param  string                    $name   SAP remote function name.
-     * @param  array<string, mixed>|null $params SAP remote function call parameters. Default: null
-     * @param  IConfiguration|null       $config SAP connection configuration. Default: null
-     * @param  IApi|null                 $api    SAP remote function call API. Default: null
+     * @param  string  $name  SAP remote function name.
+     * @param  array<string, mixed>|null  $params  SAP remote function call parameters. Default: null
+     * @param  IConfiguration|null  $config  SAP connection configuration. Default: null
+     * @param  IApi|null  $api  SAP remote function call API. Default: null
      * @throws IInvalidArgumentException
      * @throws IIncompleteConfigException
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
      */
-    public function __construct(string $name, array $params = null, IConfiguration $config = null, IApi $api = null);
+    public function create(string $name, array $params = null, IConfiguration $config = null, IApi $api = null): IFunction;
 
     /**
      * Get the SAP remote function name.
