@@ -19,7 +19,7 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
 interface IJsonSerializable extends JsonSerializable
 {
     /**
-     * @param  array<string, mixed>  $array
+     * @param  array<string, bool|int|float|string|array<int|string, mixed>>  $array
      */
     public function __construct(array $array);
 
