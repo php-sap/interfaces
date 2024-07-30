@@ -66,7 +66,7 @@ interface IFunction extends IJsonSerializable
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
      */
-    public function create(string $name, array $params = null, IConfiguration $config = null, IApi $api = null): IFunction;
+    public static function create(string $name, array $params = null, IConfiguration $config = null, IApi $api = null): IFunction;
 
     /**
      * Get the SAP remote function name.
