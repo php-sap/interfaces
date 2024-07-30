@@ -19,6 +19,11 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
 interface IJsonSerializable extends JsonSerializable
 {
     /**
+     * @param  array<string, mixed>  $array
+     */
+    public function __construct(array $array);
+
+    /**
      * Decode a formerly JSON encoded object.
      * @param  string  $json JSON encoded object.
      * @return IJsonSerializable
