@@ -30,13 +30,13 @@ interface IApi extends IJsonSerializable
      * Get all input values of the remote function.
      * @return IApiElement[]
      */
-    public function getInputValues(): array;
+    public function getInputElements(): array;
 
     /**
      * Get all output values of the remote function.
      * @return IApiElement[]
      */
-    public function getOutputValues(): array;
+    public function getOutputElements(): array;
 
     /**
      * Get all tables of the remote function.
