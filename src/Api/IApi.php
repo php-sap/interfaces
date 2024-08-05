@@ -39,6 +39,12 @@ interface IApi extends IJsonSerializable
     public function getOutputElements(): array;
 
     /**
+     * Get all direction changing elements of the remote function.
+     * @return IApiElement[]
+     */
+    public function getChangingElements(): array;
+
+    /**
      * Get all tables of the remote function.
      * @return IApiElement[]
      */
