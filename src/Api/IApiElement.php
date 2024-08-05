@@ -42,6 +42,11 @@ interface IApiElement extends IJsonSerializable
      */
     public const DIRECTION_OUTPUT = 'output';
 
+    /**
+     * API direction changing element.
+     */
+    public const DIRECTION_CHANGING = 'changing';
+
 
     /**
      * The PHP type of the element.
