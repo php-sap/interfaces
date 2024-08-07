@@ -52,3 +52,14 @@ jobs:
           php_version: "${{ matrix.php-version }}"
           configuration: "phpstan.neon"
           path: "src/"
+  codesniffer:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "git checkout"
+        uses: "actions/checkout@v3"
+      - name: "Install PHP_CodeSniffer"
+        run: "curl -OLf https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar"
+      - name: "check PHP_CodeSniffer version"
+        run: "php phpcs.phar --version"
+      - name: "PHP CodeSniffer"
+        run: "php phpcs.phar"
