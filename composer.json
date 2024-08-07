@@ -28,13 +28,5 @@
     "psr-4": {
       "phpsap\\interfaces\\": "src/"
     }
-  },
-  "scripts": {
-    "phpcs": "vendor/bin/phpcs",
-    "phpcbf": "vendor/bin/phpcbf"
-  },
-  "scripts-descriptions": {
-    "phpcs": "Run PHP CodeSniffer validations.",
-    "phpcbf": "Fix errors found by PHP CodeSniffer."
   }
 }
