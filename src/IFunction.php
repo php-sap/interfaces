@@ -43,12 +43,6 @@ interface IFunction extends IJsonSerializable
     public const JSON_PARAM = 'params';
 
     /**
-     * Restore a remote function call from an array.
-     * @param  array<string, string|IApi|array<string, mixed>>  $array
-     */
-    public function __construct(array $array);
-
-    /**
      * Create a remote function call with at least a name.
      *
      * In order to add SAP remote function call parameters, an API needs to be
