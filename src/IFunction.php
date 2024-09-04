@@ -154,7 +154,6 @@ interface IFunction extends IJsonSerializable
      *
      * @param array<string, mixed> $params An array of SAP remote function call parameters.
      * @return $this
-     * @throws IInvalidArgumentException
      * @throws IIncompleteConfigException
      * @throws IConnectionFailedException
      * @throws IUnknownFunctionException
