@@ -11,10 +11,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * Interface IJsonSerializable
  *
  * Extend PHP JsonSerializable interface by jsonDecode() method.
- *
- * @package phpsap\interfaces\Util
- * @author  Gregor J.
- * @license MIT
  */
 interface IJsonSerializable extends JsonSerializable
 {

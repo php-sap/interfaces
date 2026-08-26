@@ -11,10 +11,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * Interface ITable
  *
  * API table containing an array of associative arrays as columns of a table.
- *
- * @package phpsap\interfaces\Api
- * @author  Gregor J.
- * @license MIT
  */
 interface ITable extends IApiElement
 {

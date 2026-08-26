@@ -12,10 +12,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * Interface IValue
  *
  * API single value.
- *
- * @package phpsap\interfaces\Api
- * @author  Gregor J.
- * @license MIT
  */
 interface IValue extends IApiElement
 {

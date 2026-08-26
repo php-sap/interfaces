@@ -13,10 +13,6 @@ use phpsap\interfaces\Util\IJsonSerializable;
  * Interface IMember
  *
  * API struct or table member.
- *
- * @package phpsap\interfaces\Api
- * @author  Gregor J.
- * @license MIT
  */
 interface IMember extends IJsonSerializable
 {

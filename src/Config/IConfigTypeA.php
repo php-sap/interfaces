@@ -12,10 +12,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  *
  * Interface to configure connection parameters for SAP remote function calls using
  * a specific SAP application server (type A).
- *
- * @package phpsap\interfaces\Config
- * @author  Gregor J.
- * @license MIT
  */
 interface IConfigTypeA extends IConfiguration
 {

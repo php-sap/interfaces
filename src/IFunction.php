@@ -20,10 +20,6 @@ use phpsap\interfaces\Util\IJsonSerializable;
  *
  * As with all classes of this package, this class can be serialized using
  * json_encode() and unserialized using the static method IFunction::jsonDecode().
- *
- * @package phpsap\interfaces
- * @author  Gregor J.
- * @license MIT
  */
 interface IFunction extends IJsonSerializable
 {

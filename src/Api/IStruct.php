@@ -11,10 +11,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  * Interface IStruct
  *
  * API struct containing an associative array as named members.
- *
- * @package phpsap\interfaces\Api
- * @author  Gregor J.
- * @license MIT
  */
 interface IStruct extends IApiElement
 {

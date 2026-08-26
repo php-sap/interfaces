@@ -12,10 +12,6 @@ use phpsap\interfaces\exceptions\IInvalidArgumentException;
  *
  * Interface to configure connection parameters for SAP remote function calls using
  * load balancing (type B).
- *
- * @package phpsap\interfaces\Config
- * @author  Gregor J.
- * @license MIT
  */
 interface IConfigTypeB extends IConfiguration
 {

@@ -14,10 +14,6 @@ use phpsap\interfaces\Util\IJsonSerializable;
  * Parent class to all configuration types (A and B).
  * Configure connection parameters for SAP remote function calls, that are
  * common to both connection types (A, and B).
- *
- * @package phpsap\interfaces\Config
- * @author  Gregor J.
- * @license MIT
  */
 interface IConfiguration extends IJsonSerializable
 {
