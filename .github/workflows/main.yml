@@ -47,19 +47,19 @@ jobs:
         run: "composer install --prefer-dist --no-progress"
       # PHPStan
       - name: "PHPStan static analysis"
-        uses: "php-actions/phpstan@v3"
-        with:
-          php_version: "${{ matrix.php-version }}"
-          configuration: "phpstan.neon"
-          path: "src/"
+        run: "vendor/bin/phpstan analyse --configuration=phpstan.neon"
   codesniffer:
     runs-on: "ubuntu-latest"
     steps:
       - name: "git checkout"
         uses: "actions/checkout@v3"
-      - name: "Install PHP_CodeSniffer"
-        run: "curl -OLf https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar"
+      - name: "setup PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.1"
+      - name: "install composer dependencies"
+        run: "composer install --prefer-dist --no-progress"
       - name: "check PHP_CodeSniffer version"
-        run: "php phpcs.phar --version"
+        run: "vendor/bin/phpcs --version"
       - name: "PHP CodeSniffer"
-        run: "php phpcs.phar"
+        run: "vendor/bin/phpcs"
