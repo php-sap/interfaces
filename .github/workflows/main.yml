@@ -23,7 +23,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: "git checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v7"
       - name: "Validate composer.json"
         run: "composer validate --strict"
 
@@ -41,7 +41,7 @@ jobs:
           - "8.3"
     steps:
       - name: "git checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v7"
       - name: "setup PHP"
         uses: "shivammathur/setup-php@v2"
         with:
@@ -64,7 +64,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: "git checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v7"
       - name: "setup PHP"
         uses: "shivammathur/setup-php@v2"
         with:
@@ -84,7 +84,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: "git checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v7"
       - name: "setup PHP"
         uses: "shivammathur/setup-php@v2"
         with:
