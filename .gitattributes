@@ -2,7 +2,8 @@
 .gitattributes  export-ignore
 .github         export-ignore
 .gitignore      export-ignore
-phpcs.xml      export-ignore
+AGENTS.md       export-ignore
+phpcs.xml       export-ignore
 composer.*      export-ignore
 phpstan.neon    export-ignore
 README.md       export-ignore
