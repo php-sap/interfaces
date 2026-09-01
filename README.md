@@ -14,7 +14,5 @@ run via Docker through the `Makefile`, so no local PHP installation is needed. R
 make install PHP_VERSION=8.1
 ```
 
-See `AGENTS.md` for details and proxy/CA options.
-
 [phpsap]: https://php-sap.github.io
 [license-mit]: https://img.shields.io/badge/license-MIT-blue.svg
