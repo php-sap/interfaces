@@ -29,14 +29,6 @@
       "phpsap\\interfaces\\": "src/"
     }
   },
-  "scripts": {
-    "ci": [
-      "@composer validate --strict",
-      "@php -l src/",
-      "@php vendor/bin/phpstan analyse --configuration=phpstan.neon",
-      "@php vendor/bin/phpcs"
-    ]
-  },
   "require-dev": {
     "phpstan/phpstan": "^2.2.3",
     "squizlabs/php_codesniffer": "^4.0"
